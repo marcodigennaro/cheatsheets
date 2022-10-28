@@ -1,0 +1,6 @@
+#start service
+brew services start httpd  %macos
+sudo service apache2 start %linux
+
+#restart
+brew services restart httpd
