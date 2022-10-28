@@ -1,0 +1,25 @@
+$brew services list
+$brew services start mysql
+
+#connect with no password
+$mysql -u root 
+
+#connect with password
+$ mysql_secure_installation
+...
+$ mysql -u root -p
+$ Enter password: 
+> TR3nd$01
+
+#https://www.youtube.com/watch?v=1K4m6m5y9Oo&ab_channel=DatabaseStar
+
+#inside mysql create logfile 
+mysql > tee text.txt
+mysql > status
+mysql > show databases;
+mysql > use whatever;
+mysql > show tables;
+mysql > select * from orders;
+mysql > exit
+
+
