@@ -1,0 +1,12 @@
+#is firewall active?
+sudo ufw status
+
+#is mongod running?
+lsof -i | grep mongod
+
+#is port XYZ open?
+lsof -nP | grep XYZ
+
+
+#open tunnel
+ssh -N -L 27072:localhost:27072 mdi0316@10.100.192.47

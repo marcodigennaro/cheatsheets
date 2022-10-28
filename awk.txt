@@ -1,0 +1,31 @@
+## awk syntax
+awk ' condition { action }'
+
+## print Nth line from all txt files
+awk 'FNR==2{print $0 > "output.dat"}' file{1..80}.dat
+
+# grep and count lines matching character
+awk '/a/{++cnt} END {print "Count = ", cnt}' marks.txt
+
+# grep lines which ${1}th column is 4 long
+awk 'length($1) == 4' marks.txt
+
+## find folders with 10 files inside
+find . -type d -exec bash -c "echo -ne '{} '; ls '{}' | wc -l" \; | awk '$NF==10'
+
+## print sum of a column
+awk '{v+=$1} END {print v}'
+
+## print nth line
+awk 'NR%2==0' ## 2nd line from 0th line
+awk 'NR%3==1' ## 3rd line from 1st line
+
+# print number of line
+echo -e "one two three 4 \nfive 6 7 8 9\nten last" | awk '{print NR}'
+# print number of columns
+echo -e "one two three 4 \nfive 6 7 8 9\nten last" | awk '{print NF}'
+
+# awk print 3rd last field and set separator to '/'
+awk -F "/" '{print $(NF-3)}' input
+
+

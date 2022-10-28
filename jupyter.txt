@@ -1,0 +1,5 @@
+#on worksation
+jupyter-notebook --no-browser --NotebookApp.password='' --port 1234
+
+#from laptop
+ssh -L 8888:localhost:1234 mdi0316@10.100.192.47

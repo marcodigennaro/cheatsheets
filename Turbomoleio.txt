@@ -1,0 +1,6 @@
+##################
+# before modules 
+source /home/dwa7192/miniconda3/etc/profile.d/conda.sh
+conda activate devel
+module use /home/dwa7192/local/modulefiles
+module load turbomole/7.5.1

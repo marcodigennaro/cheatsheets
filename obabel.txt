@@ -1,0 +1,2 @@
+
+obabel RUNS/0D/Mn1_H3/pristine/final_coords.xyz -O image.png

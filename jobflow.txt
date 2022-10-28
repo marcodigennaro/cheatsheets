@@ -1,0 +1,3 @@
+from jobflow import store
+
+print(store.SETTINGS.as_dict())

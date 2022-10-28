@@ -1,0 +1,10 @@
+
+conda clean --all 
+conda update --all
+
+conda update pip
+
+# solving environment takes too long 
+:~$ conda config --remove channels conda-forge
+:~$ conda config --add channels conda-forge
+:~$ conda config --set channel_priority flexible/strict

@@ -1,0 +1,3 @@
+#print all rows
+pandas.set_option('display.max_rows', None)
+
