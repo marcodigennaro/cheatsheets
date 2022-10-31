@@ -1,3 +1,5 @@
+# show environment
+echo $CONDA_DEFAULT_ENV
 
 conda clean --all 
 conda update --all
@@ -8,3 +10,9 @@ conda update pip
 :~$ conda config --remove channels conda-forge
 :~$ conda config --add channels conda-forge
 :~$ conda config --set channel_priority flexible/strict
+
+# change PS1 default
+conda config --set changeps1 True
+
+# deactivate default base
+conda config --set auto_activate_base false
