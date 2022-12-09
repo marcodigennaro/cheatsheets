@@ -41,24 +41,20 @@ mongo  --port 27018
 
 3) Setup admin user and password in the mongo shell:
 use admin
-db.createUser({ user:"mdi0316", pwd:"rhew3621KRHE", roles:[ {role:"root", db:"admin"}, 
-                                                            {role:"dbOwner", db:"admin"}
-                                                      ]})
+#db.createUser({ user:"root",    pwd:"sfws4438EYRW", roles:[{role:"root", db:"admin" }]})
+#db.createUser({ user:"admin",   pwd:"gdfb2526ENGH", roles:[{role:"userAdminAnyDatabase", db:"admin" } ] })
+db.createUser({ user:"mdi0316", pwd:"rhew3621KRHE", roles:[{role:"dbOwner", db:"kubas" }, {role:"readWrite",db:"kubas"} ] } )
+use kubas
+db.test.insert(whatever)
 #authsource : 'admin' in my_launchpad.yaml 
 
-4) create kubas db and initiate with something 
-use kubas
-mydict = { "name": "Marco", "age": "36" }
-db.test.insert(mydict)
+4) stop db in 1)
 
-5) stop db in 1) and 2)
-
-6) Starting mongod as a daemon (fork)
+5) Starting mongod as a daemon (fork)
 mongod --port 27018 --dbpath ~/fireworks_data/db/ --logpath ~/fireworks_data/log/fireworks.log --fork --bind_ip_all --auth
 
-7) Now, admin can connect using:
-mongo --port 27018 -u "mdi0316" -p 'rhew3621KRHE' --authenticationDatabase "admin"
-
+#6) Now, admin can connect using:
+#mongo --port 27018 -u "mdi0316" -p 'sfws4438EYRW' --authenticationDatabase "admin"
 #
 #7) In the same mongo shell
 ## create user and password for the database:
@@ -71,10 +67,14 @@ mongo --port 27018 -u "mdi0316" -p 'rhew3621KRHE' --authenticationDatabase "admi
 ##################
 
 8) Connect from another server (AT cluster) - default port 
-mongo --port 27018 -u "mdi0316" -p 'rhew3621KRHE' --authenticationDatabase "admin" --host 10.100.192.47
+mongo --port 27017 -u "root" -p "sfws4438EYRW" --authenticationDatabase "admin" --host 10.100.192.47
 
 8.0) if not on opened port - activate tunnel on terminal 1
 ssh -N -L 27018:localhost:27018 mdi0316@10.100.192.47
 
+8.1)
+mongo --port 27018 -u "root" -p "sfws4438EYRW" --authenticationDatabase "admin"
+
 9) for slurm submissions - open the tunnel nodeXYZ -> masternode. Outside of the network 10.100.192.1 could not work
+
 ssh -N -L 27018:localhost:27018 mdi0316@bezavrdat-master01
