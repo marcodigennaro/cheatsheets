@@ -1,6 +1,9 @@
 # make sure to use conda mongodb
 
-<kubas> mdi0316@marco-workstation:~ (git->) $: mongod --version
+$: which mongod 
+> /home/mdi0316/miniconda3/envs/kubas/bin/mongod
+
+$: mongod --version
 > db version v4.0.3
 > git version: 7ea530946fa7880364d88c8d8b6026bbc9ffa48c
 > OpenSSL version: OpenSSL 1.1.1q  5 Jul 2022
@@ -11,7 +14,7 @@
 >     target_arch: x86_64
 
 # check running processes 
-ps -edaf | grep mongo | grep -v grep
+ps -edaf | grep mongo 
 
 
 ######################
