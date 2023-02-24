@@ -1,4 +1,7 @@
 #on worksation
+jupyter-notebook --NotebookApp.password='' 
+
+#on worksation
 jupyter-notebook --no-browser --NotebookApp.password='' --port 1234
 
 #from laptop
