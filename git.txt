@@ -43,3 +43,30 @@ git branch new_branch_name
 git branch checkout new_branch_name
 
 
+## git user
+git config --global user.name "My Name"
+git config --global user.email "myemail@example.com"
+git config --global core.editor vim
+git config --global color.ui true
+git config --list
+
+## change user.name and user.email
+https://alvinalexander.com/git/git-show-change-username-email-address/
+
+## https://www.notion.so/Introduction-to-Git-ac396a0697704709a12b6a0e545db049
+git init
+git status
+touch index.html
+git add index.html
+git commit -m "created index.html"
+git log
+git checkout <commit-hash>
+git checkout master
+
+##
+cd existing-project
+git init
+git add --all
+git commit -m "Initial Commit"
+git remote add origin https://cde.toyota-europe.com/stash/scm/~mdi0316/new.git
+git push -u origin HEAD:master
