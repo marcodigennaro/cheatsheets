@@ -1,0 +1,73 @@
+#--------------------
+# Delta-rms of Abinit_delta_JTH32-rs.txt with respect to WIEN2k-rs.txt
+# (63 elements of 63 included)
+# calculated with calcDelta-rms.py version 1.1 
+#--------------------
+LiCl	 -0.138 
+NaCl	 -0.058 
+KCl	 -0.000 
+RbCl	 0.099 
+CsCl	 0.060 
+BeO	 -0.102 
+MgO	 -0.045 
+CaO	 -0.177 
+SrO	 -0.213 
+BaO	 0.309 
+ScN	 -0.033 
+YN	 -0.119 
+LaN	 0.099 
+TiO	 -0.093 
+VO	 -0.053 
+CrO	 -0.002 
+MnO	 0.039 
+FeO	 -0.050 
+CoO	 -0.063 
+NiO	 -0.073 
+CuO	 -0.272 
+ZnO	 -0.081 
+ZrO	 -0.156 
+NbO	 -0.175 
+MoO	 -0.153 
+TcO	 -0.239 
+RuO	 -0.354 
+RhO	 -0.173 
+PdO	 -0.257 
+AgO	 -0.135 
+CdO	 -0.127 
+HfO	 -0.586 
+TaO	 -0.248 
+WO	 -0.117 
+ReO	 -0.051 
+OsO	 -0.011 
+IrO	 -0.110 
+PtO	 -0.111 
+AuO	 -0.122 
+HgO	 -0.080 
+BN	 -0.072 
+AlN	 -0.030 
+GaN	 0.004 
+InN	 0.016 
+TlN	 0.061 
+CO	 -0.195 
+SiO	 -0.138 
+GeO	 -0.020 
+SnO	 -0.104 
+PbO	 -0.073 
+AlP	 -0.103 
+AlAs	 -0.114 
+AlSb	 -0.250 
+AlBi	 -0.204 
+SrS	 -0.131 
+SrSe	 -0.108 
+SrTe	 -0.101 
+LiF	 -0.042 
+LiBr	 -0.170 
+LiI	 -0.281 
+NaF	 0.130 
+NaBr	 -0.021 
+NaI	 -0.101 
+#--------------------
+#rms  0.159
+#np.max   -0.586  (HfO)
+#np.min   -0.000  (KCl)
+#--------------------

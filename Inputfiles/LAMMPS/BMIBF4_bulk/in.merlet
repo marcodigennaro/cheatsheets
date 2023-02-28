@@ -1,0 +1,123 @@
+# Merlet_17/1/2019 -- 500K -- iso
+
+# Case Set-up
+#============
+
+units         real
+dimension     3
+boundary      p p p
+atom_style    full
+region        box block 0.0 150.0 0.0 150.0 0.0 150.0
+create_box    4 box
+molecule      BF4 BF4.data
+molecule      BMI BMI.data
+include       forcefield.BMIBF4
+create_atoms  0 random 80 7083 NULL mol BMI 1357 #432 
+create_atoms  0 random 80 1469 NULL mol BF4 2468
+
+group    cation type 2 3 4
+group     anion type 1
+
+variable      T equal 500
+variable      P equal 1.0/1.01325
+variable     dt equal 2.0
+
+mass 1 86.81
+mass 2 67.07
+mass 3 15.04
+mass 4 57.12 # BMI+ 
+
+timestep ${dt}
+
+velocity  all create ${T} 963147
+run 0 
+velocity  all scale ${T} 
+
+neighbor 2.0 bin
+neigh_modify every 1 delay 0 check yes exclude molecule/intra cation
+
+# Energy_minimization_Run
+#========================
+
+fix   temp all temp/rescale 20 ${T} ${T} 20.0 0.5
+fix   10 cation rigid/nve/small molecule  
+fix   min anion nve/limit 1.0e-1  
+
+thermo_style custom step temp press density vol pe ke etotal
+thermo 1000
+
+dump trj all custom 1000 ions.lammpstrj id mol type q x y z
+dump_modify trj sort 2
+
+run 100000
+
+# Equilibrium_Run
+#================
+
+variable    p equal 1000     # correlation length
+variable    s equal 100       # sample interval
+variable    d equal $p*$s   # dump interval
+
+variable     dens equal density
+variable     vol  equal vol
+
+unfix min
+unfix 10
+unfix temp
+
+fix   12 cation rigid/nvt/small molecule temp ${T} ${T} 10000.0 
+fix   11 anion npt temp ${T} ${T} 10000.0 iso ${P} ${P} 20000.0 dilate all
+
+fix   21    all ave/time $s $p $d v_dens v_vol file density ave running overwrite start 700000
+
+thermo 10000
+restart 1000000 snap500.restart
+run     900000 # 200000 == 400000 femtosecond == 400 picosecond
+
+# Statistics_Collection_Run
+#==========================
+
+unfix     21
+unfix     12
+unfix     11
+
+reset_timestep 0
+
+fix       15  anion nvt temp ${T} ${T} 10000.0
+fix       16 cation rigid/nvt/small molecule temp ${T} ${T} 10000.0
+
+variable    V equal vol
+variable    kB equal 1.3806485279e-20 # mJ/K  #### 1.3806485279e-23 # J/K  Boltzmann
+variable    atm2mPa equal 1.01325e+8
+variable    A2m equal 1.0e-10
+variable    fs2s equal 1.0e-15
+
+# Green-Kubo viscosity calculation
+#---------------------------------
+ variable         pxy equal pxy
+ variable         pxz equal pxz
+ variable         pyz equal pyz
+
+ fix              SS all ave/correlate $s $p $d &
+                  v_pxy v_pxz v_pyz type auto ave running
+
+ variable         convertGK equal ${fs2s}*${atm2mPa}*${atm2mPa}*${A2m}*${A2m}*${A2m}
+ variable         scale     equal $V*$s*${dt}/($T*${kB})*${convertGK}
+ variable         vxy equal trap(f_SS[3])*${scale}
+ variable         vxz equal trap(f_SS[4])*${scale}
+ variable         vyz equal trap(f_SS[5])*${scale}
+ variable         vmean equal (v_vxy+v_vxz+v_vyz)/3.0
+
+ thermo_style     custom step temp press v_vxy v_vxz v_vyz v_vmean
+ thermo 100000
+
+ run 10000000
+
+variable         etaxy equal v_vxy
+variable         etaxz equal v_vxz
+variable         etayz equal v_vyz
+
+print            "etaxy, etaxz, etayz"
+print            "${etaxy}, ${etaxz}, ${etayz}"
+variable         eta equal (${etaxy}+${etaxz}+${etayz})/3.0
+print            "running average viscosity: ${eta} miliPascal*second"

@@ -1,0 +1,636 @@
+%\documentclass[10pt]{article}
+\documentclass[10pt]{revtex4}
+
+\usepackage{fancyhdr}
+%\usepackage{draftcopy}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{amsmath}
+%\usepackage[french]{babel}
+%\selectlanguage{french}
+\usepackage[english]{babel}
+\selectlanguage{english}
+\usepackage{graphicx}
+\include{psfig}
+\usepackage{float}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Fancy Header%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\rightmark}
+\fancyhead[RE]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+%\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}
+{
+    \fancyhead{}
+    \renewcommand{\headrulewidth}{0cm}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Mise en page%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\evensidemargin -0.5cm                                        
+\topmargin -0.5cm                                                
+\headheight 1cm                                               
+\headwidth 16cm                                               
+\headsep 1cm                                                  
+\textheight 22cm                                              
+\textwidth 16cm                                               
+\marginparsep 0cm                                             
+\marginparwidth 0cm                                           
+\oddsidemargin 0.5cm                                         
+
+
+
+
+\begin{document}
+
+
+\title{Testing of JTH-v1.1 PAW table for ABINIT}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{Fran\c{c}ois Jollet}
+\author{Marc Torrent }
+\affiliation{ CEA, DAM, DIF F-91297 Arpajon, France}
+\author{ Natalie Holzwarth}
+\address{Department of Physics, Wake Forest University, Winston-Salem, NC 27109 USA}
+
+\date{\today}
+
+
+\begin{abstract}
+%% Text of abstract
+A new version of the JTH table (JTHv1.1) is now available. It has been tested both against the $\Delta$ and $\Delta_1$ factors (\cite{Lejaeghere},\cite{Jollet}) and against the lattice parameter of fcc, bcc, rocksalt, perovskite, zinc-blende and half-heusler structures, following the GBRV testing suite \cite{Garrity}.
+\end{abstract}
+
+\maketitle
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+\section{JTH-v1.1 PAW table for ABINIT}
+
+A new version of the JTH table (JTHv1.1) is now available. It has been generated with the code ATOMPAW (v4.0.0.12) \cite{web4}. This new version follows the XML format defined in \cite{web2}.\\
+Compared with the JTHv1.0 version, the following changes have been made:\\
+- the data files have been slightly changed for: H, Li, Si, Cu, Zn, Ga, Cd, Sb, Lu, Os, Ir and Bi.\\
+These changed have been made for numerical reasons (generally big ratios between the amplitude of projectors and the amplitude of wavefunctions).
+With these modifications, we obtain a table that gives good results for all the tests performed. These results are very similar to the physical results of the JTH-v1.0 table
+
+\section{PAW atomic data validation against the delta factor}
+
+We have used the delta calculation package (version 3.1 \cite{web1}) to validate our new atomic data against the Wien2k code. The electronic structure calculations have been performed thanks to the ABINIT-8.4.4 code \cite{Abinit16}. For this, we have used the recommended values \cite{Lejaeghere} for the k-point sampling (6750/N k-points in the Brillouin zone for a N-atom cell). A Fermi-Dirac broadenning of 0.002 Ha has been used. As indicated in \cite{Lejaeghere}, we have used the cystallographic data (CIF's files) provided with the delta calculation package. The Equation of State (EOS) of each element has been adjusted to a Birch-Murnaghan one thanks to seven calculations at seven different volumes, ranging from 0.94 to 1.06 $V_{\rm S}$, where $V_{\rm S}$ is the equilibrium volume deduced from the CIF's file, without geometry optimisation to be exactly in the same conditions as the Wien2k calculations.\\
+
+The version 3.1 of the delta calculation package gives both the delta factor and the modified delta1 factor proposed by \cite{Jollet}.
+For the JTH-v1.1 table, we obtain the mean values of $\Delta$=0.44 meV and $\Delta_1$=1.03 meV for a 20 Ha cutoff, which are very good results (see \cite{web1} for comparison with other PAW data).\\
+
+\newpage
+The detailed results for each elements are given here:\\
+
+\begin{verbatim}
+
+#--------------------
+# Delta values of Abinit_delta_JTH32-20.txt with respect to WIEN2k.txt (in meV/atom)
+# (71 elements of 71 included)
+# calculated with calcDelta.py version 3.1 
+# from left to right: Delta [meV/atom] - relative Delta [%] - Delta1 [meV/atom]
+#--------------------
+ H	 0.237	 26.1	3.972 
+He	 0.008	 10.8	1.662 
+Li	 0.011	  0.8	0.119 
+Be	 0.094	  1.9	0.289 
+ B	 0.244	  2.8	0.426 
+ C	 0.146	  1.2	0.180 
+ N	 0.488	  6.1	0.927 
+ O	 0.242	  5.0	0.763 
+ F	 0.220	  6.5	0.984 
+Ne	 0.010	  5.6	0.891 
+Na	 0.498	 33.9	5.190 
+Mg	 0.256	  6.1	0.934 
+Al	 0.098	  1.5	0.229 
+Si	 0.365	  4.0	0.604 
+ P	 0.488	  6.6	1.003 
+ S	 0.304	  4.2	0.636 
+Cl	 0.062	  1.7	0.252 
+Ar	 0.022	 11.4	1.670 
+ K	 0.069	  5.1	0.778 
+Ca	 0.111	  3.0	0.459 
+Sc	 0.019	  0.3	0.044 
+Ti	 1.252	 12.7	1.930 
+ V	 1.688	 13.6	2.074 
+Cr	 0.723	  6.7	1.024 
+Mn	 0.892	 13.6	2.050 
+Fe	 0.557	  5.0	0.763 
+Co	 1.068	  9.0	1.373 
+Ni	 1.457	 13.3	2.028 
+Cu	 0.286	  3.3	0.504 
+Zn	 0.319	  5.5	0.840 
+Ga	 0.126	  2.5	0.379 
+Ge	 0.555	  7.7	1.181 
+As	 0.494	  6.3	0.959 
+Se	 0.238	  3.3	0.510 
+Br	 0.109	  2.4	0.369 
+Kr	 0.021	  9.3	1.441 
+Rb	 0.288	 22.4	3.415 
+Sr	 0.755	 23.7	3.616 
+ Y	 0.332	  4.8	0.735 
+Zr	 0.245	  2.2	0.336 
+Nb	 0.193	  1.2	0.188 
+Mo	 1.631	  7.8	1.195 
+Tc	 1.031	  4.7	0.715 
+Ru	 0.344	  1.6	0.241 
+Rh	 0.944	  5.1	0.781 
+Pd	 1.161	  8.9	1.360 
+Ag	 0.215	  2.6	0.397 
+Cd	 0.088	  1.7	0.263 
+In	 0.209	  4.2	0.641 
+Sn	 0.106	  1.6	0.239 
+Sb	 0.265	  3.3	0.497 
+Te	 0.069	  0.9	0.131 
+ I	 0.727	 15.2	2.319 
+Xe	 0.010	  4.2	0.645 
+Cs	 0.115	  9.9	1.500 
+Ba	 0.739	 26.6	4.080 
+Lu	 0.343	  4.9	0.750 
+Hf	 0.192	  1.6	0.239 
+Ta	 0.434	  2.4	0.362 
+ W	 1.349	  5.4	0.828 
+Re	 0.886	  3.2	0.488 
+Os	 0.412	  1.4	0.217 
+Ir	 0.622	  2.4	0.368 
+Pt	 2.105	 10.6	1.616 
+Au	 1.108	  8.6	1.323 
+Hg	 0.144	 10.9	1.704 
+Tl	 0.056	  1.3	0.201 
+Pb	 0.293	  4.5	0.690 
+Bi	 0.128	  1.6	0.245 
+Po	 0.194	  2.2	0.338 
+Rn	 0.023	  8.8	1.355 
+#--------------------
+#np.mean  0.444	 6.8	1.035
+#np.std   0.459	 6.6	1.009
+#np.max   2.105	 33.9	5.190 	 (Pt, Na, Na)
+#np.min   0.008	 0.3	0.044 	 (He, Sc, Sc)
+#--------------------
+
+\end{verbatim}
+
+We have also studied the convergency of the delta factor with the energy cutoff. We have calculated the delta factor for each element for Ecut=10 Ha, 12 Ha, 15 Ha, 17.5 Ha, 20 Ha, 25 Ha and 40 Ha. The following table shows the absolute difference of the $\Delta_1$ factor in meV compared to the converged value at Ecut=40 Ha.
+\begin{verbatim}
+
+# Ecut	10 Ha    12 Ha	  15 Ha	  17.5 Ha	  20 Ha	   25 Ha	   40 Ha 
+
+ H	   8.496	   8.131	   5.986	   3.257	   1.304	  -0.088	   0.000
+He	  26.637	  75.749	   2.172	   3.652	   1.206	   3.253	   0.000
+Li	   0.785	   0.008	   0.650	   0.058	  -0.103	  -0.094	   0.000
+Be	   0.591	   0.044	  -0.231	  -0.219	  -0.090	  -0.015	   0.000
+ B	   0.072	   1.029	   0.986	   0.367	   0.099	   0.040	   0.000
+ C	  18.620	   1.786	  -0.662	  -0.759	  -0.772	  -0.194	   0.000
+ N	   4.141	  14.617	  13.676	   3.931	   0.567	  -0.204	   0.000
+ O	  70.776	  31.858	   9.273	   0.866	   0.346	   0.282	   0.000
+ F	 111.608	  13.347	   7.535	  -0.462	   0.149	  -0.224	   0.000
+Ne	  15.490	   7.554	   7.878	  21.914	  -0.957	   0.459	   0.000
+Na	     NC		   11.555	  -4.554	   0.189	   0.025	   0.305	   0.000
+Mg	   0.418	  -0.135	  -0.102	   0.591	  -0.490	   0.399	   0.000
+Al	   3.095	   1.192	  -0.168	  -0.210	  -0.171	  -0.026	   0.000
+Si	  -0.453	  -0.344	  -0.090	  -0.092	  -0.026	  -0.017	   0.000
+ P	   4.953	   2.296	  -1.333	  -1.013	  -0.591	  -0.044	   0.000
+ S	   5.416	   4.192	   0.911	  -0.659	  -0.573	  -0.047	   0.000
+Cl	   9.561	   8.118	   2.845	   0.196	  -0.813	  -0.112	   0.000
+Ar	  21.102	    NC	 	   0.716	   6.629	   0.244	   0.539	   0.000
+ K	   4.136	   4.020	   0.680	  -0.046	  -0.012	  -0.224	   0.000
+Ca	   3.294	   0.415	   0.672	   0.448	   0.146	  -0.002	   0.000
+Sc	   0.788	   0.495	   0.101	   0.001	  -0.034	  -0.021	   0.000
+Ti	  -0.620	   0.333	   0.003	  -0.007	   0.014	  -0.021	   0.000
+ V	   0.335	  -0.034	   0.008	  -0.035	  -0.003	  -0.027	   0.000
+Cr	   4.227	   8.864	   5.156	   0.205	  -3.626	  -0.780	   0.000
+Mn	  49.221	   1.189	   0.293	   1.564	  -0.026	   0.306	   0.000
+Fe	  19.818	  -0.151	   0.010	  -0.193	  -0.056	   0.209	   0.000
+Co	  30.274	   1.309	   0.120	   1.746	   0.921	   0.309	   0.000
+Ni	    NC  	     NC		   19.282	  21.230	  -1.858	  -0.565	   0.000
+Cu	  12.082	   7.507	   0.834	  -0.728	  -1.388	  -0.518	   0.000
+Zn	  48.953	   0.784	   0.425	   0.004	   0.209	   0.117	   0.000
+Ga	   2.906	   0.292	  -0.103	  -0.110	  -0.051	   0.002	   0.000
+Ge	  22.142	   4.919	   1.008	   0.328	   0.038	  -0.021	   0.000
+As	  -0.595	  -0.161	   0.143	   0.056	  -0.012	  -0.049	   0.000
+Se	   0.103	   1.198	   0.129	   0.377	   0.043	   0.007	   0.000
+Br	  -0.335	   0.499	  -0.234	  -0.293	  -0.046	   0.011	   0.000
+Kr	   0.783	   2.318	   0.215	   0.565	   0.242	  -0.127	   0.000
+Rb	   1.886	   0.008	  -0.711	  -0.157	  -0.178	   0.067	   0.000
+Sr	   0.761	   0.443	   0.298	  -0.203	   0.022	   0.012	   0.000
+ Y	   0.372	   1.031	   0.074	   0.049	  -0.079	  -0.020	   0.000
+Zr	   3.456	   0.270	   0.035	   0.054	   0.164	   0.038	   0.000
+Nb	   1.211	   0.882	  -0.125	  -0.158	  -0.220	   0.019	   0.000
+Mo	   1.091	   0.129	   0.109	  -0.070	  -0.026	  -0.082	   0.000
+Tc	   1.047	  -0.534	  -0.229	  -0.116	  -0.062	  -0.011	   0.000
+Ru	   0.298	   0.454	  -0.056	  -0.140	  -0.070	   0.061	   0.000
+Rh	   1.606	   1.432	  -0.814	   0.293	  -0.296	  -0.337	   0.000
+Pd	  21.532	  14.000	   5.090	   0.018	   0.351	   0.295	   0.000
+Ag	   2.043	  -0.099	  -0.109	  -0.124	  -0.100	   0.001	   0.000
+Cd	   3.727	   0.114	  -0.351	  -0.405	  -0.175	  -0.139	   0.000
+In	   8.225	  -0.735	   0.273	  -0.073	  -0.252	  -0.260	   0.000
+Sn	   3.254	   1.046	   1.291	   0.439	  -0.329	   0.429	   0.000
+Sb	  -0.327	  -0.218	   0.022	   0.031	   0.039	  -0.010	   0.000
+Te	   0.505	   0.151	  -0.108	  -0.033	  -0.021	  -0.010	   0.000
+ I	   0.296	   0.046	   0.075	   0.066	  -0.011	   0.007	   0.000
+Xe	   3.969	   8.409	   7.455	   4.665	  -1.216	   1.554	   0.000
+Cs	   5.666	   4.324	   7.542	  -0.026	   0.861	   0.182	   0.000
+Ba	   1.170	  -0.097	  -1.551	  -0.206	  -0.335	   0.133	   0.000
+Lu	 165.692	   5.865	   0.538	   0.424	   0.091	   0.049	   0.000
+Hf	   1.692	   0.080	   0.053	   0.011	   0.062	   0.019	   0.000
+Ta	   0.416	   1.417	   0.015	   0.375	   0.250	   0.034	   0.000
+ W	   0.712	   0.233	   0.077	   0.097	   0.222	   0.005	   0.000
+Re	   1.769	   0.692	   0.108	   0.078	   0.246	   0.015	   0.000
+Os	  -0.028	   0.054	   0.019	   0.010	   0.024	   0.004	   0.000
+Ir	   1.234	  -0.155	  -0.165	  -0.165	  -0.068	   0.041	   0.000
+Pt	  18.814	   5.866	   0.787	   0.724	   0.343	   0.101	   0.000
+Au	  29.222	   7.812	   1.280	   0.992	   0.318	   0.122	   0.000
+Hg	 120.031	  21.774	   0.152	   0.009	  -0.071	  -0.115	   0.000
+Tl	   2.111	   0.488	   0.205	   0.605	  -0.085	  -0.094	   0.000
+Pb	   1.363	  -0.325	  -0.254	  -0.281	  -0.117	  -0.014	   0.000
+Bi	   0.808	   0.297	   0.242	   0.156	   0.032	   0.019	   0.000
+Po	   0.035	   0.056	   0.164	  -0.054	   0.004	   0.028	   0.000
+Rn	   2.910	   3.614	   0.041	   0.374	  -0.031	   0.928	   0.000
+
+
+
+\end{verbatim}
+
+From this table we have calculated recommended values for the plane wave cutoff energy:\\
+Low value:  abs($\Delta_1$-$\Delta_{1}(40Ha)$) $<$ 5 meV\\
+Medium value: abs($\Delta_1$-$\Delta_{1}(40Ha)$) $<$ 2 meV\\
+High value: abs($\Delta_1$-$\Delta_{1}(40Ha)$) $<$ 1 meV\\
+
+These values are given here and are inserted inside each PAW data XML file for each element.
+\begin{verbatim}
+# Ecut low medium high 
+
+ H  17.50  20.00  25.00
+He  15.00  25.00  25.00
+Li  10.00  10.00  10.00
+Be  10.00  10.00  10.00
+ B  10.00  10.00  15.00
+ C  12.00  12.00  15.00
+ N  17.50  20.00  20.00
+ O  17.50  17.50  17.50
+ F  17.50  17.50  17.50
+Ne  20.00  20.00  20.00
+Na  15.00  17.50  17.50
+Mg  10.00  10.00  10.00
+Al  10.00  12.00  15.00
+Si  10.00  10.00  10.00
+ P  10.00  15.00  20.00
+ S  12.00  15.00  15.00
+Cl  15.00  17.50  17.50
+Ar  20.00  20.00  20.00
+ K  10.00  15.00  15.00
+Ca  10.00  12.00  12.00
+Sc  10.00  10.00  10.00
+Ti  10.00  10.00  10.00
+ V  10.00  10.00  10.00
+Cr  17.50  25.00  25.00
+Mn  12.00  12.00  20.00
+Fe  12.00  12.00  12.00
+Co  12.00  12.00  20.00
+Ni  20.00  20.00  25.00
+Cu  15.00  15.00  25.00
+Zn  12.00  12.00  12.00
+Ga  10.00  12.00  12.00
+Ge  12.00  15.00  17.50
+As  10.00  10.00  10.00
+Se  10.00  10.00  15.00
+Br  10.00  10.00  10.00
+Kr  10.00  15.00  15.00
+Rb  10.00  10.00  12.00
+Sr  10.00  10.00  10.00
+ Y  10.00  10.00  15.00
+Zr  10.00  12.00  12.00
+Nb  10.00  10.00  12.00
+Mo  10.00  10.00  12.00
+Tc  10.00  10.00  12.00
+Ru  10.00  10.00  10.00
+Rh  10.00  10.00  15.00
+Pd  17.50  17.50  17.50
+Ag  10.00  12.00  12.00
+Cd  10.00  12.00  12.00
+In  12.00  12.00  12.00
+Sn  10.00  12.00  17.50
+Sb  10.00  10.00  10.00
+Te  10.00  10.00  10.00
+ I  10.00  10.00  10.00
+Xe  17.50  20.00  25.00
+Cs  17.50  17.50  17.50
+Ba  10.00  10.00  17.50
+Lu  15.00  15.00  15.00
+Hf  10.00  10.00  12.00
+Ta  10.00  10.00  15.00
+ W  10.00  10.00  10.00
+Re  10.00  10.00  12.00
+Os  10.00  10.00  10.00
+Ir  10.00  10.00  12.00
+Pt  15.00  15.00  15.00
+Au  15.00  15.00  17.50
+Hg  15.00  15.00  15.00
+Tl  10.00  12.00  12.00
+Pb  10.00  10.00  12.00
+Bi  10.00  10.00  10.00
+Po  10.00  10.00  10.00
+Rn  10.00  15.00  15.00
+#n_low(10)= 44 n_low(12)=  8 n_low(15)=  8 n_low(17.5)=  8 n_low(20)=  3 n_low(25)=  0
+#n_med(10)= 32 n_med(12)= 14 n_med(15)= 11 n_med(17.5)=  6 n_med(20)=  6 n_med(25)=  2
+#n_high(10)= 18 n_high(12)= 17 n_high(15)= 14 n_high(17.5)= 10 n_high(20)=  6 n_high(25)=  6
+
+
+\end{verbatim}
+
+\section{PAW atomic data validation against fcc, bcc,  rocksalt, perovskite, half-heusler and zinc-blende structures}
+
+Following \cite{web5}, we have calculated the lattice parameters for fcc, bcc, rocksalt, perovskite, half-heusler and zinc-blende structures and compare the results to a WIEN2k calculation in the same conditions. The calculations were performed with the ABINIT code with the following input files:\\
+Common part of general input file for all the structures: \\
+\begin{verbatim}
+ndtset 7
+nsym 0
+occopt 3
+pawovlp -1
+prteig 0
+prtden 0
+prtcif 1
+tsmear 0.001
+ecutsm 0.5
+ecut 20
+pawecutdg 40
+chkprim 0
+usexcnhat -1
+ngkpt 8 8 8
+chksymbreak 0
+paral_kgb 0
+nstep 99
+toldfe 1.0d-8
+
+getwfk2 -1
+getwfk3 -1
+getwfk4 -1
+getwfk5 -1
+getwfk6 -1
+getwfk7 -1
+
+scalecart3 3*0.9932883883792687
+scalecart2 3*0.986484829732188
+scalecart1 3*0.9795861087155615
+scalecart5 3*1.006622709560113
+scalecart6 3*1.0131594038201772
+scalecart7 3*1.0196128224222163
+\end{verbatim}
+
+For fcc structures (example for Al):\\
+\begin{verbatim}
+shiftk 0.0 0.0 0.0
+acell  4.040210000000    4.040210000000    4.040210000000  angstrom
+xred 0 0 0
+rprim 0.0 0.5 0.5
+      0.5 0.0 0.5
+      0.5 0.5 0.0
+natom 1 typat 1
+ntypat 1
+znucl  13
+nband 8
+\end{verbatim}
+
+For bcc structures(example for Al):\\
+\begin{verbatim}
+shiftk 0.5 0.5 0.5
+acell  3.240000000000    3.240000000000    3.240000000000  angstrom
+xred 0 0 0
+rprim -0.5 0.5 0.5
+      0.5 -0.5 0.5
+      0.5 0.5 -0.5
+natom 1 typat 1
+ntypat 1
+znucl  13
+nband 8
+\end{verbatim}
+
+For rocksalt structures(example for NaCl):\\
+\begin{verbatim}
+shiftk 0.0 0.0 0.0
+acell  5.714000000000    5.714000000000    5.714000000000  angstrom
+xred 0 0 0
+ 0.5 0.5 0.5
+rprim 0.0 0.5 0.5
+      0.5 0.0 0.5
+      0.5 0.5 0.0
+natom 2 typat 1 2
+ntypat 2
+znucl  11   17
+nband 21
+\end{verbatim}
+
+For perovskite structures(example for BaTiO3):\\
+\begin{verbatim}
+shiftk 0.0 0.0 0.0
+acell  4.024000000000    4.024000000000    4.024000000000  angstrom
+xred 0.5 0.5 0.5
+ 0 0 0
+ 0.5 0 0
+ 0 0.5 0
+ 0 0 0.5
+rprim 1.0 0.0 0.0
+      0.0 1.0 0.0
+      0.0 0.0 1.0
+natom 5 typat 1 2 3 3 3
+ntypat 3
+znucl  56   22    8
+nband 55
+\end{verbatim}
+
+For half-heusler structures(example for AgAlGe):\\
+\begin{verbatim}
+shiftk 0.0 0.0 0.0
+acell  6.224000000000    6.224000000000    6.224000000000  angstrom
+xred 0.25 0.25 0.25
+ 0.5 0.5 0.5
+ 0 0 0
+rprim 0.0 0.5 0.5
+      0.5 0.0 0.5
+      0.5 0.5 0.0
+natom 3 typat 3 2 1
+ntypat 3
+znucl  47   13   32
+nband 33
+\end{verbatim}
+
+For zinc-blende structures(example for ZnS):\\
+\begin{verbatim}
+shiftk 0.0 0.0 0.0
+acell  5.442518477764    5.442518477764    5.442518477764  angstrom
+xred 0 0 0
+ 0.25 0.25 0.25
+rprim 0.0 0.5 0.5
+      0.5 0.0 0.5
+      0.5 0.5 0.0
+natom 2 typat 1 2
+ntypat 2
+znucl  30   16
+nband 23
+\end{verbatim}
+
+
+
+A summary of the results is presented \label{tab1}. The values for GBRV in ABINIT and the values used for AE reference calculations come from \cite{web5}.  
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{llllllllccc}
+\\\hline
+ Test& GBRV-Abinit & JTHv1.1-Abinit \\
+\hline
+ fcc latt. const. (\%)   &  0.13  &  0.13  \\
+ bcc  latt. const. (\%)  & 0.15   & 0.14  \\
+ rocksalt  latt. const. (\%)  & 0.13   & 0.16  \\
+ perovskite  latt. const. (\%)  & 0.09   & 0.14  \\
+ half-heusler  latt. const. (\%)  & 0.13   & 0.15  \\
+ zinc-blend $\Delta$ (meV/atom)  & 1.2   & 0.94  \\
+ zinc-blend $\Delta$1 (meV/atom)  & 2.1   & 1.71  \\
+
+\\\hline
+\end{tabular}
+\caption{Summary of PAW data files testing (RMS errors reltative to AE calculations and $\Delta$ factor for zinc-blende structures)  }
+\label{tab1}
+\end{center}
+\end{table}
+
+
+The detailed results for each element is given on Fig. \ref{fig1} for fcc structures, Fig. \ref{fig2} for bcc structures,  Fig. \ref{fig3} for rocksalt structures, Fig. \ref{fig4} for perovskite structures, Fig. \ref{fig5} for half-heusler structures and Fig. \ref{fig6} for zinc-blende structures. 
+\\
+\\
+\\
+\\
+\\
+
+\begin{figure}[H]
+\centering
+{\resizebox{13.0cm}{!}
+{\includegraphics{fig-fcc.eps}}} \\
+\caption{Percent difference in AE versus PAW data calculations for fcc lattice constant}
+\label{fig1}
+\end{figure}
+
+
+
+\begin{figure}[H]
+\begin{center}
+{\resizebox{13.0cm}{!}
+{\rotatebox{0}{\includegraphics{fig-bcc.eps}}}} \\
+\caption{Percent difference in AE versus PAW data calculations for bcc lattice constant}
+\label{fig2}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+{\resizebox{13.0cm}{!}
+{\rotatebox{0}{\includegraphics{fig-rs.eps}}}} \\
+\caption{Percent difference in AE versus PAW data calculations for rocksalt lattice constant}
+\label{fig3}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+{\resizebox{12.0cm}{!}
+{\rotatebox{0}{\includegraphics{fig-per.eps}}}} \\
+\caption{Percent difference in AE versus PAW data calculations for perovskite lattice constant}
+\label{fig4}
+\end{center}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+{\resizebox{6.0cm}{!}
+%{\rotatebox{90}{\includegraphics{fig-hh.eps}}}} \\
+{\includegraphics[angle=-90]{fig-hh.eps}}}\\
+\caption{Percent difference in AE versus PAW data calculations for half-heusler lattice constant}
+\label{fig5}
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+{\resizebox{13.0cm}{!}
+{\rotatebox{0}{\includegraphics{fig-zb.eps}}}} \\
+\caption{$\Delta$ factor for zinc- blende structure}
+\label{fig6}
+\end{center}
+\end{figure}
+
+Following \cite{web5}, we have also calculated magnetic moments of transition metal oxides with non-zero magnetic moments at the AE non-spin polarized lattice constant. The magnetic moments are given in $\mu_B$ per primitive cell. The AE results come from \cite{web5}. The calculations have been done with a 12x12x12 k-point mesh \label{tab2}.\\
+
+\begin{table}[h]
+\begin{tabular}{llllllllllllcccc}
+\\\hline
+ Compound& $\mu_{AE}$   &  $\mu_{GBRV-Abinit}$   &   $\mu_{JTHv1.1-Abinit}$ \\
+\hline
+ VO &  1.32  &  1.27 & 1.24  \\
+ CrO & 2.99  &  3.04 & 3.05  \\
+ MnO &  3.85  &  3.84 & 3.86  \\
+ FeO &  3.83  &  3.84 & 3.86  \\
+ CoO &  2.42  &  2.53 & 2.56  \\
+ NiO &  1.68  &  1.47 & 1.36  \\
+ MoO &  0.54  &  0.53 & 0.49  \\
+ TcO &  1.92  &  1.90 & 1.95  \\
+ RuO &  1.64  &  1.63 & 1.67  \\
+ OsO &  1.56  &  1.50 & 1.68  \\
+ IrO &  0.62  &  0.62 & 0.74  \\
+\\\hline
+\end{tabular}
+\caption{Magnetic moments of transition metal oxides  }
+\label{tab2}
+\end{table}
+
+
+In addition, we have generated atomic data for rare-earth elements. The lattice parameters found for the fcc struture are the following \label{tab3}:
+\begin{table}[h]
+\begin{tabular}{llcccccccccccccccc}
+\\\hline
+Element & La & Ce & Pr & Nd & Pm & Sm & Eu & Gd & Tb & Dy & Ho & Er & Tm & Yb & Lu  \\
+fcc lattice parameter (\AA) & 5.272 & 4.769 & 4.608 & 4.531 & 4.499 & 4.516 & 4.630 & 4.723 & 4.835 & 4.918 & 5.012 & 5.073 & 5.120 & 5.163 & 4.867  \\
+\\\hline
+\end{tabular}
+\caption{fcc lattice parameters obtained with JTHv1.1 atomic data in Abinit for the rare-earth elements }
+\label{tab3}
+\end{table}
+
+
+\section{Conclusions}
+
+ The JTHv1.1 table has good accuracy and efficiency compared to other similar datasets. It makes it a good candidate for high-throughput calculations. This new table is provided as XML files, that makes it easily readable by all PAW codes (ABINIT, GPAW, PWPAW, SOCORRO, ...). It is distributed on the ABINIT web site \cite{web3}. 
+
+\section{Acknowledgments}
+
+This work was performed using HPC resources from the French Research and Technology Computing Center (CCRT).  
+
+
+
+%\bibliographystyle{model1-num-names}
+\bibliography{JTH}
+
+
+
+
+\end{document}
+
+

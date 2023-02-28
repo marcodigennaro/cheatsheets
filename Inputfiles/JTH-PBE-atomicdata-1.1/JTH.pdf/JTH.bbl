@@ -1,0 +1,79 @@
+\begin{thebibliography}{9}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname bibnamefont\endcsname\relax
+  \def\bibnamefont#1{#1}\fi
+\expandafter\ifx\csname bibfnamefont\endcsname\relax
+  \def\bibfnamefont#1{#1}\fi
+\expandafter\ifx\csname citenamefont\endcsname\relax
+  \def\citenamefont#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{\citenamefont{Lejaeghere et~al.}(2014)\citenamefont{Lejaeghere, {Van
+  Speybroeck}, {Van Oost}, and Cottenier}}]{Lejaeghere}
+\bibinfo{author}{\bibfnamefont{K.}~\bibnamefont{Lejaeghere}},
+  \bibinfo{author}{\bibfnamefont{V.}~\bibnamefont{{Van Speybroeck}}},
+  \bibinfo{author}{\bibfnamefont{G.}~\bibnamefont{{Van Oost}}},
+  \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{S.}~\bibnamefont{Cottenier}},
+  \bibinfo{journal}{Crit. Rev. Solid State Mater. Sci.}
+  \textbf{\bibinfo{volume}{39}}, \bibinfo{pages}{1} (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Jollet et~al.}(2014)\citenamefont{Jollet, Torrent, and
+  Holzwarth}}]{Jollet}
+\bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Jollet}},
+  \bibinfo{author}{\bibfnamefont{M.}~\bibnamefont{Torrent}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{N.}~\bibnamefont{Holzwarth}},
+  \bibinfo{journal}{Computer Physics Communications}
+  \textbf{\bibinfo{volume}{185}}, \bibinfo{pages}{1246} (\bibinfo{year}{2014}).
+
+\bibitem[{\citenamefont{Garrity et~al.}(2014)\citenamefont{Garrity, Bennett,
+  Rabe, and Vanderbilt}}]{Garrity}
+\bibinfo{author}{\bibfnamefont{K.~F.} \bibnamefont{Garrity}},
+  \bibinfo{author}{\bibfnamefont{J.~W.} \bibnamefont{Bennett}},
+  \bibinfo{author}{\bibfnamefont{K.~M.} \bibnamefont{Rabe}}, \bibnamefont{and}
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Vanderbilt}},
+  \bibinfo{journal}{Comp. Mat. Sci.} \textbf{\bibinfo{volume}{81}},
+  \bibinfo{pages}{446} (\bibinfo{year}{2014}).
+
+\bibitem[{web(2014{\natexlab{a}})}]{web4}
+\bibinfo{journal}{https://users.wfu.edu/natalie/papers/pwpaw/man.html}
+  (\bibinfo{year}{2014}{\natexlab{a}}).
+
+\bibitem[{web(2016)}]{web2}
+\bibinfo{journal}{https://http://esl.cecam.org/mediawiki/index.php/Paw-xml}
+  (\bibinfo{year}{2016}).
+
+\bibitem[{web(2014{\natexlab{b}})}]{web1}
+\bibinfo{journal}{https://molmod.ugent.be/DeltaCodesDFT}
+  (\bibinfo{year}{2014}{\natexlab{b}}).
+
+\bibitem[{\citenamefont{Gonze et~al.}(2016)\citenamefont{Gonze, Jollet, Araujo,
+  Adams, Amadon, Applencourt, Audouze, Beuken, Bieder, Bokhanchuk
+  et~al.}}]{Abinit16}
+\bibinfo{author}{\bibfnamefont{X.}~\bibnamefont{Gonze}},
+  \bibinfo{author}{\bibfnamefont{F.}~\bibnamefont{Jollet}},
+  \bibinfo{author}{\bibfnamefont{F.~A.} \bibnamefont{Araujo}},
+  \bibinfo{author}{\bibfnamefont{D.}~\bibnamefont{Adams}},
+  \bibinfo{author}{\bibfnamefont{B.}~\bibnamefont{Amadon}},
+  \bibinfo{author}{\bibfnamefont{T.}~\bibnamefont{Applencourt}},
+  \bibinfo{author}{\bibfnamefont{C.}~\bibnamefont{Audouze}},
+  \bibinfo{author}{\bibfnamefont{J.-M.} \bibnamefont{Beuken}},
+  \bibinfo{author}{\bibfnamefont{J.}~\bibnamefont{Bieder}},
+  \bibinfo{author}{\bibfnamefont{A.}~\bibnamefont{Bokhanchuk}},
+  \bibnamefont{et~al.}, \bibinfo{journal}{Computer Physics Communications}
+  \textbf{\bibinfo{volume}{205}}, \bibinfo{pages}{106 } (\bibinfo{year}{2016}),
+  ISSN \bibinfo{issn}{0010-4655},
+  \urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0010465516300923}.
+
+\bibitem[{web(2014{\natexlab{c}})}]{web5}
+\bibinfo{journal}{https://www.physics.rutgers.edu/gbrv/}
+  (\bibinfo{year}{2014}{\natexlab{c}}).
+
+\bibitem[{web(2014{\natexlab{d}})}]{web3}
+\bibinfo{journal}{https://abinit.org}  (\bibinfo{year}{2014}{\natexlab{d}}).
+
+\end{thebibliography}

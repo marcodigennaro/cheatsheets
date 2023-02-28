@@ -1,0 +1,66 @@
+ $CONTRL
+  SCFTYP=RHF
+  EXETYP=RUN
+  RUNTYP=OPTIMIZE
+  COORD=ZMT
+  DFTTYP=B3LYP
+  NZVAR=15
+  MOLPLT=.T.
+  NOSYM=1
+  MAXIT=200
+  ICHARG=-1
+  MULT=1
+ $END
+ $BASIS
+  GBASIS=N311
+  NGAUSS=6
+  NDFUNC=1
+  NPFUNC=1
+  DIFFSP=.T.
+  DIFFS=.T.
+  POLAR=POPN311
+ $END
+ $STATPT
+  OPTTOL=0.0001
+  NSTEP=1000
+ $END
+ $SCF
+  DIRSCF=.T.
+  NCONV=5
+  DIIS=.T.
+  DAMP=.T.
+ $END
+ $DFT
+  IDCVER=4
+ $END
+ $SYSTEM
+  TIMLIM=525600
+  MEMORY=4000000
+ $END
+ $DATA
+isolated_PF6
+C1
+ p
+ f    1 fp2     
+ f    1 fp3         2 fpf3      
+ f    1 fp4         3 fpf4          2 dih4
+ f    1 fp5         4 fpf5          3 dih5
+ f    1 fp6         2 fpf6          3 dih6
+ f    1 fp7         2 fpf7          3 dih7
+
+fp2         1.5
+fp3         1.5
+fpf3       90.0
+fp4         1.5
+fpf4       90.0
+dih4      179.999
+fp5         1.5
+fpf5       90.0
+dih5      179.9
+fp6         1.5
+fpf6       90.0
+dih6       90.0
+fp7         1.3
+fpf7       90.0
+dih7      270.0
+ $END
