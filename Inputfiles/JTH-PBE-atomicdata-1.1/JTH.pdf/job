@@ -1,9 +1,0 @@
-latex JTH.tex
-bibtex JTH
-latex JTH.tex
-latex JTH.tex
-dvips -o JTH.ps JTH.dvi
-#gv pawps.ps
-#convert pawps.ps pawps.pdf
-ps2pdf JTH.ps JTH.pdf
-#acroread pawps.pdf
