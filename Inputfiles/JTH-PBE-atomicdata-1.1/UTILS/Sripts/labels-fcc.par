@@ -1,0 +1,178 @@
+# Grace project file
+#
+with g0
+     xaxis  on
+     xaxis  type zero false
+     xaxis  offset 0.000000 , 0.000000
+     xaxis  bar on
+     xaxis  bar color 1
+     xaxis  bar linestyle 1
+     xaxis  bar linewidth 1.0
+     xaxis  label ""
+     xaxis  label layout para
+     xaxis  label place auto
+     xaxis  label char size 1.000000
+     xaxis  label font 0
+     xaxis  label color 1
+     xaxis  label place normal
+     xaxis  tick on
+     xaxis  tick major 10
+     xaxis  tick minor ticks 1
+     xaxis  tick default 6
+     xaxis  tick place rounded true
+     xaxis  tick in
+     xaxis  tick major size 0.670000
+     xaxis  tick major color 1
+     xaxis  tick major linewidth 1.0
+     xaxis  tick major linestyle 1
+     xaxis  tick major grid off
+     xaxis  tick minor color 1
+     xaxis  tick minor linewidth 1.0
+     xaxis  tick minor linestyle 1
+     xaxis  tick minor grid off
+     xaxis  tick minor size 0.500000
+     xaxis  ticklabel on
+     xaxis  ticklabel format general
+     xaxis  ticklabel prec 5
+     xaxis  ticklabel formula ""
+     xaxis  ticklabel append ""
+     xaxis  ticklabel prepend ""
+     xaxis  ticklabel angle 0
+     xaxis  ticklabel skip 0
+     xaxis  ticklabel stagger 1
+     xaxis  ticklabel place normal
+     xaxis  ticklabel offset auto
+     xaxis  ticklabel offset 0.000000 , 0.010000
+     xaxis  ticklabel start type auto
+     xaxis  ticklabel start 0.000000
+     xaxis  ticklabel stop type auto
+     xaxis  ticklabel stop 0.000000
+     xaxis  ticklabel char size 0.620000
+     xaxis  ticklabel font 0
+     xaxis  ticklabel color 1
+     xaxis  tick place normal
+     xaxis  tick spec type both
+     xaxis  tick spec 62
+     xaxis  tick major 0, 0
+     xaxis  ticklabel 0, "H"
+     xaxis  tick major 1, 1
+     xaxis  ticklabel 1, "Li"
+     xaxis  tick major 2, 2
+     xaxis  ticklabel 2, "Be"
+     xaxis  tick major 3, 3
+     xaxis  ticklabel 3, "B"
+     xaxis  tick major 4, 4
+     xaxis  ticklabel 4, "C"
+     xaxis  tick major 5, 5
+     xaxis  ticklabel 5, "O"
+     xaxis  tick major 6, 6
+     xaxis  ticklabel 6, "F"
+     xaxis  tick major 7, 7
+     xaxis  ticklabel 7, "Na"
+     xaxis  tick major 8, 8
+     xaxis  ticklabel 8, "Mg"
+     xaxis  tick major 9, 9
+     xaxis  ticklabel 9, "Al"
+     xaxis  tick major 10, 10
+     xaxis  ticklabel 10, "Si"
+     xaxis  tick major 11, 11
+     xaxis  ticklabel 11, "S"
+     xaxis  tick major 12, 12
+     xaxis  ticklabel 12, "Cl"
+     xaxis  tick major 13, 13
+     xaxis  ticklabel 13, "K"
+     xaxis  tick major 14, 14
+     xaxis  ticklabel 14, "Ca"
+     xaxis  tick major 15, 15
+     xaxis  ticklabel 15, "Sc"
+     xaxis  tick major 16, 16
+     xaxis  ticklabel 16, "Ti"
+     xaxis  tick major 17, 17
+     xaxis  ticklabel 17, "V"
+     xaxis  tick major 18, 18
+     xaxis  ticklabel 18, "Cr"
+     xaxis  tick major 19, 19
+     xaxis  ticklabel 19, "Mn"
+     xaxis  tick major 20, 20
+     xaxis  ticklabel 20, "Fe"
+     xaxis  tick major 21, 21
+     xaxis  ticklabel 21, "Co"
+     xaxis  tick major 22, 22
+     xaxis  ticklabel 22, "Ni"
+     xaxis  tick major 23, 23
+     xaxis  ticklabel 23, "Cu"
+     xaxis  tick major 24, 24
+     xaxis  ticklabel 24, "Zn"
+     xaxis  tick major 25, 25
+     xaxis  ticklabel 25, "Ga"
+     xaxis  tick major 26, 26
+     xaxis  ticklabel 26, "Ge"
+     xaxis  tick major 27, 27
+     xaxis  ticklabel 27, "As"
+     xaxis  tick major 28, 28
+     xaxis  ticklabel 28, "Se"
+     xaxis  tick major 29, 29
+     xaxis  ticklabel 29, "Br"
+     xaxis  tick major 30, 30
+     xaxis  ticklabel 30, "Rb"
+     xaxis  tick major 31, 31
+     xaxis  ticklabel 31, "Sr"
+     xaxis  tick major 32, 32
+     xaxis  ticklabel 32, "Y"
+     xaxis  tick major 33, 33
+     xaxis  ticklabel 33, "Zr"
+     xaxis  tick major 34, 34
+     xaxis  ticklabel 34, "Nb"
+     xaxis  tick major 35, 35
+     xaxis  ticklabel 35, "Mo"
+     xaxis  tick major 36, 36
+     xaxis  ticklabel 36, "Tc"
+     xaxis  tick major 37, 37
+     xaxis  ticklabel 37, "Ru"
+     xaxis  tick major 38, 38
+     xaxis  ticklabel 38, "Rh"
+     xaxis  tick major 39, 39
+     xaxis  ticklabel 39, "Pd"
+     xaxis  tick major 40, 40
+     xaxis  ticklabel 40, "Ag"
+     xaxis  tick major 41, 41
+     xaxis  ticklabel 41, "Cd"
+     xaxis  tick major 42, 42
+     xaxis  ticklabel 42, "In"
+     xaxis  tick major 43, 43
+     xaxis  ticklabel 43, "Sn"
+     xaxis  tick major 44, 44
+     xaxis  ticklabel 44, "Sb"
+     xaxis  tick major 45, 45
+     xaxis  ticklabel 45, "Te"
+     xaxis  tick major 46, 46
+     xaxis  ticklabel 46, "I"
+     xaxis  tick major 47, 47
+     xaxis  ticklabel 47, "Cs"
+     xaxis  tick major 48, 48
+     xaxis  ticklabel 48, "Ba"
+     xaxis  tick major 49, 49
+     xaxis  ticklabel 49, "La"
+     xaxis  tick major 50, 50
+     xaxis  ticklabel 50, "Hf"
+     xaxis  tick major 51, 51
+     xaxis  ticklabel 51, "Ta"
+     xaxis  tick major 52, 52
+     xaxis  ticklabel 52, "W"
+     xaxis  tick major 53, 53
+     xaxis  ticklabel 53, "Re"
+     xaxis  tick major 54, 54
+     xaxis  ticklabel 54, "Os"
+     xaxis  tick major 55, 55
+     xaxis  ticklabel 55, "Ir"
+     xaxis  tick major 56, 56
+     xaxis  ticklabel 56, "Pt"
+     xaxis  tick major 57, 57
+     xaxis  ticklabel 57, "Au"
+     xaxis  tick major 58, 58
+     xaxis  ticklabel 58, "Tl"
+     xaxis  tick major 59, 59
+     xaxis  ticklabel 59, "Pb"
+     xaxis  tick major 60, 60
+     xaxis  ticklabel 60, "Bi"
+ 

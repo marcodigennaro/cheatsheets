@@ -1,0 +1,33 @@
+start opt_bf4 
+title BF4
+geometry
+zmatrix units angstrom  
+B
+F  1  r2
+F  1  r3  2  a3
+F  1  r4  2  a4  3  d4
+F  1  r5  2  a5  3  d5
+variables
+r2 1.4539
+r3 1.4539
+a3 109.47
+r4 1.4539
+a4 109.47
+d4 120.00
+r5 1.4539
+a5 109.47
+d5 240.00
+end
+end
+basis
+ B library 6-311g*
+ F library 6-311g*
+end
+charge -1
+dft     
+ xc b3lyp
+end
+pspw
+ energy_cutoff 5
+end
+task dft 

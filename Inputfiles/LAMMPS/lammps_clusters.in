@@ -1,0 +1,68 @@
+# -- INITIALIZATION -- #
+dimension 3
+boundary p p p
+atom_style full
+units metal
+dielectric 2.0
+bond_style harmonic
+angle_style harmonic
+#kspace_style pppm/cg 1.0e-4
+#kspace_modify pressure/scalar yes
+
+neighbor 2.0 bin
+neigh_modify delay 0 every 1 check yes
+
+# -- ATOM DEFINITION -- #
+region box1 block -40.0 40.0 -40.0 40.0 -40.0 40.0
+
+## -- PROPERTY COMPUTE -- #
+compute peratom all pe/atom
+
+##################################
+## EQUILIBRATION ##
+##################################
+velocity  all zero linear
+reset_timestep  0
+timestep	1
+fix	  333 all print 1 "${dist} ${theta} ${phi} ${ILpe}" file lmps_pot_ener.dat screen no 
+
+thermo   100
+thermo_style custom step temp pe ke ebond press density
+#dump 1 all custom 100 my_dump.* id x y z c_peratom
+##################################
+#  FIXED angles
+##################################
+fix frzanion ANION setforce 0.0 0.0 0.0
+#fix frzring  ring  setforce 0.0 0.0 0.0
+
+label dist_loop
+label theta_loop
+label phi_loop
+variable dist   index   dist_values 
+variable theta  index   theta_values
+variable phi    index   phi_values
+
+variable  anx equal x[1]
+variable  any equal y[1]
+variable  anz equal z[1]
+
+variable  ILpe  equal pe
+
+variable  vxx equal sin($(v_theta/180*PI))*cos($(v_phi/180*PI))
+variable  vzz equal sin($(v_theta/180*PI))*sin($(v_phi/180*PI))
+variable  vyy equal cos($(v_theta/180*PI))
+variable  xx equal v_dist*v_vxx
+variable  yy equal v_dist*v_vyy
+variable  zz equal v_dist*v_vzz
+
+set atom 1 x ${xx} y ${yy} z ${zz}
+run      1
+
+next phi
+jump lmps.inp phi_loop
+
+next theta
+jump lmps.inp theta_loop
+
+next dist
+jump lmps.inp dist_loop

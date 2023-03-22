@@ -1,0 +1,332 @@
+# Grace project file
+#
+with g0
+     xaxis  on
+     xaxis  type zero false
+     xaxis  offset 0.000000 , 0.000000
+     xaxis  bar on
+     xaxis  bar color 1
+     xaxis  bar linestyle 1
+     xaxis  bar linewidth 1.0
+     xaxis  label ""
+     xaxis  label layout perp
+     xaxis  label place spec
+     xaxis  label place 0.000000, 0.100000
+     xaxis  label char size 0.980000
+     xaxis  label font 0
+     xaxis  label color 1
+     xaxis  label place normal
+     xaxis  tick on
+     xaxis  tick major 10
+     xaxis  tick minor ticks 1
+     xaxis  tick default 6
+     xaxis  tick place rounded true
+     xaxis  tick in
+     xaxis  tick major size 0.670000
+     xaxis  tick major color 1
+     xaxis  tick major linewidth 1.0
+     xaxis  tick major linestyle 1
+     xaxis  tick major grid off
+     xaxis  tick minor color 1
+     xaxis  tick minor linewidth 1.0
+     xaxis  tick minor linestyle 1
+     xaxis  tick minor grid off
+     xaxis  tick minor size 0.500000
+     xaxis  ticklabel on
+     xaxis  ticklabel format general
+     xaxis  ticklabel prec 5
+     xaxis  ticklabel formula ""
+     xaxis  ticklabel append ""
+     xaxis  ticklabel prepend ""
+     xaxis  ticklabel angle 90
+     xaxis  ticklabel skip 0
+     xaxis  ticklabel stagger 1
+     xaxis  ticklabel place normal
+     xaxis  ticklabel offset spec
+     xaxis  ticklabel offset 0.000000 , 0.010000
+     xaxis  ticklabel start type auto
+     xaxis  ticklabel start 0.000000
+     xaxis  ticklabel stop type auto
+     xaxis  ticklabel stop 0.000000
+     xaxis  ticklabel char size 0.490000
+     xaxis  ticklabel font 0
+     xaxis  ticklabel color 1
+     xaxis  tick place normal
+     xaxis  tick spec type both
+     xaxis  tick spec 138
+     xaxis  tick major 0, 0
+     xaxis  ticklabel 0, "AgAlGe"
+     xaxis  tick major 1, 1
+     xaxis  ticklabel 1, "AgAlSn"
+     xaxis  tick major 2, 2
+     xaxis  ticklabel 2, "AgCaBi"
+     xaxis  tick major 3, 3
+     xaxis  ticklabel 3, "AgYSi"
+     xaxis  tick major 4, 4
+     xaxis  ticklabel 4, "AlBeB"
+     xaxis  tick major 5, 5
+     xaxis  ticklabel 5, "AlLiGe"
+     xaxis  tick major 6, 6
+     xaxis  ticklabel 6, "AlLiSi"
+     xaxis  tick major 7, 7
+     xaxis  ticklabel 7, "AuLiSb"
+     xaxis  tick major 8, 8
+     xaxis  ticklabel 8, "BaZnTi"
+     xaxis  tick major 9, 9
+     xaxis  ticklabel 9, "BeScB"
+     xaxis  tick major 10, 10
+     xaxis  ticklabel 10, "BiMgCu"
+     xaxis  tick major 11, 11
+     xaxis  ticklabel 11, "BiScNi"
+     xaxis  tick major 12, 12
+     xaxis  ticklabel 12, "BiYNi"
+     xaxis  tick major 13, 13
+     xaxis  ticklabel 13, "BiYPd"
+     xaxis  tick major 14, 14
+     xaxis  ticklabel 14, "BiZrCo"
+     xaxis  tick major 15, 15
+     xaxis  ticklabel 15, "BiZrNi"
+     xaxis  tick major 16, 16
+     xaxis  ticklabel 16, "CaZnSn"
+     xaxis  tick major 17, 17
+     xaxis  ticklabel 17, "CaZnZr"
+     xaxis  tick major 18, 18
+     xaxis  ticklabel 18, "CdPLi"
+     xaxis  tick major 19, 19
+     xaxis  ticklabel 19, "CoMnSb"
+     xaxis  tick major 20, 20
+     xaxis  ticklabel 20, "CoNbSn"
+     xaxis  tick major 21, 21
+     xaxis  ticklabel 21, "CoSnMo"
+     xaxis  tick major 22, 22
+     xaxis  ticklabel 22, "CoSnNb"
+     xaxis  tick major 23, 23
+     xaxis  ticklabel 23, "CoSnTc"
+     xaxis  tick major 24, 24
+     xaxis  ticklabel 24, "CoSnTi"
+     xaxis  tick major 25, 25
+     xaxis  ticklabel 25, "CoZrSb"
+     xaxis  tick major 26, 26
+     xaxis  ticklabel 26, "CrSbNi"
+     xaxis  tick major 27, 27
+     xaxis  ticklabel 27, "CsZnBi"
+     xaxis  tick major 28, 28
+     xaxis  ticklabel 28, "CuAlGe"
+     xaxis  tick major 29, 29
+     xaxis  ticklabel 29, "CuAlSn"
+     xaxis  tick major 30, 30
+     xaxis  ticklabel 30, "CuMgAs"
+     xaxis  tick major 31, 31
+     xaxis  ticklabel 31, "CuMgSn"
+     xaxis  tick major 32, 32
+     xaxis  ticklabel 32, "CuScSn"
+     xaxis  tick major 33, 33
+     xaxis  ticklabel 33, "CuYSi"
+     xaxis  tick major 34, 34
+     xaxis  ticklabel 34, "CuYSn"
+     xaxis  tick major 35, 35
+     xaxis  ticklabel 35, "FeSnTi"
+     xaxis  tick major 36, 36
+     xaxis  ticklabel 36, "InLiGe"
+     xaxis  tick major 37, 37
+     xaxis  ticklabel 37, "IrMnSn"
+     xaxis  tick major 38, 38
+     xaxis  ticklabel 38, "KZnBi"
+     xaxis  tick major 39, 39
+     xaxis  ticklabel 39, "LiAlSn"
+     xaxis  tick major 40, 40
+     xaxis  ticklabel 40, "LiAuS"
+     xaxis  tick major 41, 41
+     xaxis  ticklabel 41, "LiBaP"
+     xaxis  tick major 42, 42
+     xaxis  ticklabel 42, "LiCaP"
+     xaxis  tick major 43, 43
+     xaxis  ticklabel 43, "LiCGa"
+     xaxis  tick major 44, 44
+     xaxis  ticklabel 44, "LiCuS"
+     xaxis  tick major 45, 45
+     xaxis  ticklabel 45, "LiCuSe"
+     xaxis  tick major 46, 46
+     xaxis  ticklabel 46, "LiCuTe"
+     xaxis  tick major 47, 47
+     xaxis  ticklabel 47, "LiLaGe"
+     xaxis  tick major 48, 48
+     xaxis  ticklabel 48, "LiMgN"
+     xaxis  tick major 49, 49
+     xaxis  ticklabel 49, "LiSiGa"
+     xaxis  tick major 50, 50
+     xaxis  ticklabel 50, "LiSnIn"
+     xaxis  tick major 51, 51
+     xaxis  ticklabel 51, "LiSrP"
+     xaxis  tick major 52, 52
+     xaxis  ticklabel 52, "LiYSn"
+     xaxis  tick major 53, 53
+     xaxis  ticklabel 53, "LiZnN"
+     xaxis  tick major 54, 54
+     xaxis  ticklabel 54, "MgPLi"
+     xaxis  tick major 55, 55
+     xaxis  ticklabel 55, "MgSbCu"
+     xaxis  tick major 56, 56
+     xaxis  ticklabel 56, "MgSbNi"
+     xaxis  tick major 57, 57
+     xaxis  ticklabel 57, "MgSbPd"
+     xaxis  tick major 58, 58
+     xaxis  ticklabel 58, "MgSbPt"
+     xaxis  tick major 59, 59
+     xaxis  ticklabel 59, "MgSnCu"
+     xaxis  tick major 60, 60
+     xaxis  ticklabel 60, "MgSrGe"
+     xaxis  tick major 61, 61
+     xaxis  ticklabel 61, "MgSrSi"
+     xaxis  tick major 62, 62
+     xaxis  ticklabel 62, "MgSrSn"
+     xaxis  tick major 63, 63
+     xaxis  ticklabel 63, "MgZnHf"
+     xaxis  tick major 64, 64
+     xaxis  ticklabel 64, "MnPdTe"
+     xaxis  tick major 65, 65
+     xaxis  ticklabel 65, "MnPtGa"
+     xaxis  tick major 66, 66
+     xaxis  ticklabel 66, "MnPtSb"
+     xaxis  tick major 67, 67
+     xaxis  ticklabel 67, "MnRhSb"
+     xaxis  tick major 68, 68
+     xaxis  ticklabel 68, "MnSbCo"
+     xaxis  tick major 69, 69
+     xaxis  ticklabel 69, "MnSbCu"
+     xaxis  tick major 70, 70
+     xaxis  ticklabel 70, "MnSbIr"
+     xaxis  tick major 71, 71
+     xaxis  ticklabel 71, "MnSbNi"
+     xaxis  tick major 72, 72
+     xaxis  ticklabel 72, "MnSbOs"
+     xaxis  tick major 73, 73
+     xaxis  ticklabel 73, "MnSbPt"
+     xaxis  tick major 74, 74
+     xaxis  ticklabel 74, "MnSbRe"
+     xaxis  tick major 75, 75
+     xaxis  ticklabel 75, "MnSbRh"
+     xaxis  tick major 76, 76
+     xaxis  ticklabel 76, "MnSbTa"
+     xaxis  tick major 77, 77
+     xaxis  ticklabel 77, "MnSbW"
+     xaxis  tick major 78, 78
+     xaxis  ticklabel 78, "MnSnPt"
+     xaxis  tick major 79, 79
+     xaxis  ticklabel 79, "NaAgO"
+     xaxis  tick major 80, 80
+     xaxis  ticklabel 80, "NaAlGe"
+     xaxis  tick major 81, 81
+     xaxis  ticklabel 81, "NaBGe"
+     xaxis  tick major 82, 82
+     xaxis  ticklabel 82, "NaMgN"
+     xaxis  tick major 83, 83
+     xaxis  ticklabel 83, "NaYGe"
+     xaxis  tick major 84, 84
+     xaxis  ticklabel 84, "NaYSn"
+     xaxis  tick major 85, 85
+     xaxis  ticklabel 85, "NaZnBi"
+     xaxis  tick major 86, 86
+     xaxis  ticklabel 86, "NaZnP"
+     xaxis  tick major 87, 87
+     xaxis  ticklabel 87, "NaZnSb"
+     xaxis  tick major 88, 88
+     xaxis  ticklabel 88, "NbRhSn"
+     xaxis  tick major 89, 89
+     xaxis  ticklabel 89, "NbSbFe"
+     xaxis  tick major 90, 90
+     xaxis  ticklabel 90, "NbSbRh"
+     xaxis  tick major 91, 91
+     xaxis  ticklabel 91, "NbSbRu"
+     xaxis  tick major 92, 92
+     xaxis  ticklabel 92, "NiHfSn"
+     xaxis  tick major 93, 93
+     xaxis  ticklabel 93, "NiSbMn"
+     xaxis  tick major 94, 94
+     xaxis  ticklabel 94, "NiSbTi"
+     xaxis  tick major 95, 95
+     xaxis  ticklabel 95, "NiSnTi"
+     xaxis  tick major 96, 96
+     xaxis  ticklabel 96, "NiSnZr"
+     xaxis  tick major 97, 97
+     xaxis  ticklabel 97, "NiTiSn"
+     xaxis  tick major 98, 98
+     xaxis  ticklabel 98, "PbYAu"
+     xaxis  tick major 99, 99
+     xaxis  ticklabel 99, "PdHfSn"
+     xaxis  tick major 100, 100
+     xaxis  ticklabel 100, "PdSbMn"
+     xaxis  tick major 101, 101
+     xaxis  ticklabel 101, "PdTiGe"
+     xaxis  tick major 102, 102
+     xaxis  ticklabel 102, "PdZrSn"
+     xaxis  tick major 103, 103
+     xaxis  ticklabel 103, "PtHfSn"
+     xaxis  tick major 104, 104
+     xaxis  ticklabel 104, "PtSbMn"
+     xaxis  tick major 105, 105
+     xaxis  ticklabel 105, "PtSnMn"
+     xaxis  tick major 106, 106
+     xaxis  ticklabel 106, "PtSnSc"
+     xaxis  tick major 107, 107
+     xaxis  ticklabel 107, "PZnLi"
+     xaxis  tick major 108, 108
+     xaxis  ticklabel 108, "RbZnBi"
+     xaxis  tick major 109, 109
+     xaxis  ticklabel 109, "RhSbMn"
+     xaxis  tick major 110, 110
+     xaxis  ticklabel 110, "RhTiGa"
+     xaxis  tick major 111, 111
+     xaxis  ticklabel 111, "SbCdAg"
+     xaxis  tick major 112, 112
+     xaxis  ticklabel 112, "SbCdAu"
+     xaxis  tick major 113, 113
+     xaxis  ticklabel 113, "SbCuCd"
+     xaxis  tick major 114, 114
+     xaxis  ticklabel 114, "SbHgAg"
+     xaxis  tick major 115, 115
+     xaxis  ticklabel 115, "SbScNi"
+     xaxis  tick major 116, 116
+     xaxis  ticklabel 116, "SbScPd"
+     xaxis  tick major 117, 117
+     xaxis  ticklabel 117, "SbScPt"
+     xaxis  tick major 118, 118
+     xaxis  ticklabel 118, "SbTaCo"
+     xaxis  tick major 119, 119
+     xaxis  ticklabel 119, "SbTaRu"
+     xaxis  tick major 120, 120
+     xaxis  ticklabel 120, "SbTiCo"
+     xaxis  tick major 121, 121
+     xaxis  ticklabel 121, "SbTiFe"
+     xaxis  tick major 122, 122
+     xaxis  ticklabel 122, "SbTiNi"
+     xaxis  tick major 123, 123
+     xaxis  ticklabel 123, "SbTiRu"
+     xaxis  tick major 124, 124
+     xaxis  ticklabel 124, "SbVCo"
+     xaxis  tick major 125, 125
+     xaxis  ticklabel 125, "SbVFe"
+     xaxis  tick major 126, 126
+     xaxis  ticklabel 126, "SbVNi"
+     xaxis  tick major 127, 127
+     xaxis  ticklabel 127, "SbVRu"
+     xaxis  tick major 128, 128
+     xaxis  ticklabel 128, "SbYNi"
+     xaxis  tick major 129, 129
+     xaxis  ticklabel 129, "SbYPt"
+     xaxis  tick major 130, 130
+     xaxis  ticklabel 130, "SbZrRu"
+     xaxis  tick major 131, 131
+     xaxis  ticklabel 131, "SbZrTc"
+     xaxis  tick major 132, 132
+     xaxis  ticklabel 132, "ScSnAu"
+     xaxis  tick major 133, 133
+     xaxis  ticklabel 133, "SnTiNi"
+     xaxis  tick major 134, 134
+     xaxis  ticklabel 134, "SnTiPt"
+     xaxis  tick major 135, 135
+     xaxis  ticklabel 135, "SrAlGa"
+     xaxis  tick major 136, 136
+     xaxis  ticklabel 136, "SrCdSi"
+     xaxis  tick major 137, 137
+     xaxis  ticklabel 137, "TlLiGe"

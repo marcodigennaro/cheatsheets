@@ -15,12 +15,14 @@ QUEUEADAPTER_LOC: /home/mdi0316/.fireworks/tmole_qadapter.yaml
 # LPAD COMMANDS
 lpad -l my_launchpad.yaml get_wflows
 lpad add fw_test.yaml
-lpad get_fws -i 1 -d all # get all details of the Firework with fw_id = 1
 rlaunch singleshot
-lpad get_fws -d less
-lpad get_fws -s READY -d less
 rlaunch rapidfire
 rlaunch rapidfire --nlaunches infinite --sleep 10
+
+#query lpad
+lpad get_fws -i 1 -d all # get all details of the Firework with fw_id = 1
+lpad get_fws -d less
+lpad get_fws -s READY -d less
 
 ## WORKSTATION ##
 launchpad = LaunchPad(host="localhost", port=27017, \

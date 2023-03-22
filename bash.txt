@@ -16,3 +16,7 @@ sudo mount 10.100.192.1:/storage /storage
 #check if library is installed
 ldconfig -p | grep libjpeg
 
+#check open ports (eg samba)
+telnet 10.100.192.47 139
+telnet 10.100.192.47 445
+
