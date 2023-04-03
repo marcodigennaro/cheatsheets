@@ -1,7 +1,9 @@
+#recommended use is 
+python -m pip command 
+
 #pip update
 python -m pip install --upgrade pip
 pip list --outdated
-
 
 pip install --trusted-host pypi.org 
             --trusted-host files.pythonhosted.org 
