@@ -1,0 +1,8 @@
+sqlite3 db.filename.sqlite3
+.tables
+.help
+.index
+.database
+SELECT * FROM auth_user;
+.headers on
+.mode column

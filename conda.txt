@@ -16,3 +16,10 @@ conda config --set changeps1 True
 
 # deactivate default base
 conda config --set auto_activate_base false
+
+
+# CREATE ENV.yml
+$ conda env export ENVNAME>ENV.yml
+
+# UPDATE AND PRUNE
+$ conda env update --prefix ./env --file environment.yml  --prune
