@@ -3,8 +3,10 @@ HOW TO CREATE A PYTHON PACKAGE
 
 # from https://www.youtube.com/watch?v=5KEObONUkik&t=6s #
 
-pip install wheel
-python setup.py bdist_wheel
+* wheel a package for distribution
+  * pip install wheel
+  * python setup.py bdist_wheel
+  * python setup.py sdist
 
 
 # from https://www.youtube.com/watch?v=DhUpxWjOhME #
