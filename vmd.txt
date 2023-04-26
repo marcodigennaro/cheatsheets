@@ -1,5 +1,0 @@
-topo writelammpsdata data.lammps full
- topo readlammpsdata "C:\/Users\/MDI0316\/Desktop\/DATA\/MWCNT\/to_simon\/OTL5FLMQ\/bdl_n05_m02_d04_np00_triclinic.lmp"
-
-#make movies
-ffmpeg -i file.mpg out.mp4
