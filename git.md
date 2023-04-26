@@ -1,8 +1,10 @@
 GIT cheatsheet
 ==============
 
+
 git user
 --------
+
 git config --global user.name "My Name"
 
 git config --global user.email "myemail@example.com"
@@ -13,18 +15,22 @@ git config --global color.ui true
 
 git config --list
 
+
 change user.name and user.email
 -------------------------------
+
 https://alvinalexander.com/git/git-show-change-username-email-address/
 
 
 clone repo to new_folder
 ------------------------
+
 git clone https://cde.toyota-europe.com/stash/scm/~mdi0316/gec.git new_folder
 
 
 common commands
 ---------------
+
 https://www.notion.so/Introduction-to-Git-ac396a0697704709a12b6a0e545db049
 
 git init
@@ -48,6 +54,7 @@ git remote -v
 
 branches
 --------
+
 git branch #shows a list
 
 git checkout -b branch_name #create new branch
@@ -60,14 +67,17 @@ staging
 git status
 
 git add file_name
+
 git rm --cached file_name
 
 
 merging
 -------
+
 ##Always merge from main what has been changed
 
 git checkout main
 
 git merge develop
+
 
