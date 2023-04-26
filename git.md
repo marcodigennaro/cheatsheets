@@ -64,6 +64,7 @@ git checkout main
 
 staging
 -------
+
 git status
 
 git add file_name
