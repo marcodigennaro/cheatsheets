@@ -1,8 +1,0 @@
-pair_style lj/cut/coul/long 16.0  
-kspace_style ewald 1.0e-4 
-pair_modify mix arithmetic
-
-pair_coeff 1 1 0.773 4.51 # epsilon, sigma
-pair_coeff 2 2 0.611 4.38
-pair_coeff 3 3 0.086 3.41
-pair_coeff 4 4 0.437 5.04

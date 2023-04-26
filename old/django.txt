@@ -1,9 +1,0 @@
-django-admin startproject mysite
-cd mysite
-python manage.py runserver 8000
-python manage.py startapp main
-python manage.py makemigrations main
-python manage.py migrate
-python manage.py shell
-python manage.py createsuperuser
-
