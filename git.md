@@ -82,3 +82,25 @@ git checkout main
 git merge develop
 
 
+upstream
+--------
+#https://www.youtube.com/watch?v=deEYHVpE1c8&ab_channel=FaradayAcademy
+#Before 
+
+$ git remote -v
+
+    origin	git@github.com:marcodigennaro/nagare.git (fetch)
+
+    origin	git@github.com:marcodigennaro/nagare.git (push)
+
+$ git remote add upstream git@github.com:davidwaroquiers/nagare.git
+
+$ git remote -v
+
+    origin	git@github.com:marcodigennaro/nagare.git (fetch)
+    
+    origin	git@github.com:marcodigennaro/nagare.git (push)
+    
+    upstream	git@github.com:davidwaroquiers/nagare.git (fetch)
+    
+    upstream	git@github.com:davidwaroquiers/nagare.git (push)
