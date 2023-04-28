@@ -5,6 +5,10 @@ conda install -c conda-forge pytest
 
 conda install -c conda-forge pytest-cov
 
+conda install -c conda-forge pytest-html
+
+conda install -c conda-forge pytest-mock
+
 Usage
 -----
 pytest --cov #get coverage report
