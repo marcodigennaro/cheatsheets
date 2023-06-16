@@ -3,6 +3,7 @@ VMD cheatsheet
 
 Create PBC
 ----------
+pbc box
 pbc set {50 50 50}
 pbc box -centersel center
 
@@ -11,7 +12,7 @@ PBC wrap command in vmd to re-center a protein in a simulation box
 https://www.youtube.com/watch?v=IeBpVabqzy0
 
 * to wrap a trajectory:
-pbc wrap -centersel "protein" -center com -compound residue -all 
+pbc wrap -centersel "protein" -center com -compound residue -all
 
 * to write dcd:
 animate write dcd mohamed.dcd
@@ -25,7 +26,7 @@ Write LAMMPS Data File with VMD Software
 ----------------------------------------
 topo retypebonds
 topo gussangles
-topo guessdihedrals 
+topo guessdihedrals
 topo writelammpsdata data.lammps full
 molinfo top set a 30.0
 molinfo top set b 30.0
@@ -37,4 +38,3 @@ molinfo top set gamma 90.0
 Make movies
 -----------
 ffmpeg -i file.mpg out.mp4
-
