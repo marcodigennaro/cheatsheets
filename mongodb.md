@@ -1,7 +1,7 @@
 MONGODB cheatsheet
 ==================
 
-# make sure to use conda mongodb
+### make sure to use conda mongodb
 
 $: which mongod
 ```
@@ -20,14 +20,14 @@ $: mongod --version
 >     target_arch: x86_64
 ```
 
-# check running processes
+### check running processes
 ps -edaf | grep mongo
 
 
 ON WORKSTATION
 --------------
 
-# Starting and configuring the database
+### Starting and configuring the database
 
 0) Set in /etc/mongod.conf
 
