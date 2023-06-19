@@ -79,24 +79,33 @@ mongod --port 27018 --dbpath ~/fireworks_data/db/ --logpath ~/fireworks_data/log
 ```
 
 7) Now, admin can connect using:
+
 ```
 mongo --port 27018 -u "usname" -p 'pswd' --authenticationDatabase "admin"
 ```
 
 #7) In the same mongo shell
-## create user and password for the database:
-##use kubas
-##db.createUser( { user : 'uname', pwd : 'pswd', roles: [ {role:"dbOwner", db:"kubas"}, {role:"readWrite",db:"kubas"} ] } )
-##db.grantRolesToUser( 'uname' , ['readWrite'] )
+#create user and password for the database:
+#use kubas
+#db.createUser( { user : 'uname', pwd : 'pswd', roles: [ {role:"dbOwner", db:"kubas"}, {role:"readWrite",db:"kubas"} ] } )
+#db.grantRolesToUser( 'uname' , ['readWrite'] )
 
 ON CLUSTER
 ----------
 
-8) Connect from another server (AT cluster) - default port
-mongo --port 27018 -u "uname" -p 'pswd' --authenticationDatabase "admin" --host 10.100.192.47
+8.0) Connect from another server (AT cluster) - default port
 
-8.0) if not on opened port - activate tunnel on terminal 1
-ssh -N -L 27018:localhost:27018 uname@10.100.192.47
+```
+$ mongo --port 27018 -u "uname" -p 'pswd' --authenticationDatabase "admin" --host 10.100.192.47
+```
+
+8.1) if not on opened port - activate tunnel on terminal 1
+
+```
+$ ssh -N -L 27018:localhost:27018 uname@10.100.192.47
+```
 
 9) for slurm submissions - open the tunnel nodeXYZ -> masternode. Outside of the network 10.100.192.1 could not work
-ssh -N -L 27018:localhost:27018 uname@bezavrdat-master01
+```
+$ ssh -N -L 27018:localhost:27018 uname@bezavrdat-master01
+```
