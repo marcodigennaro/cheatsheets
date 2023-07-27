@@ -1,11 +1,25 @@
 MONGODB cheatsheet
 ==================
+### check running processes
+```
+ps -edaf | grep mongo
+```
+
+### kill previous instances
+
+```
+sudo lsof -i | grep mongo
+sudo lsof -iTCP -sTCP:LISTEN -n -P | grep mongo
+ps -ef | grep mongo
+ls -l /proc/12054/exe
+sudo kill 12054
+```
 
 ### make sure to use conda mongodb
 
 $: which mongod
 ```
-> /home/uname/miniconda3/envs/kubas/bin/mongod
+ /home/uname/miniconda3/envs/kubas/bin/mongod
 ```
 
 $: mongod --version
@@ -20,9 +34,6 @@ $: mongod --version
 >     target_arch: x86_64
 ```
 
-### check running processes
-ps -edaf | grep mongo
-
 
 ON WORKSTATION
 --------------
@@ -33,20 +44,24 @@ ON WORKSTATION
 
 ```
 >> # Where to store the data.
->> dbpath=/home/uname/mongodb
+>> storage:
+>> dbPath=/home/uname/mongodb
 >>
 >> #where to log
->> logpath=/home/uname/mongodb/mongodb.log
+>> systemLog:
+>>   path=/home/uname/mongodb/mongodb.log
 >>
->> bind_ip = 127.0.0.1,10.100.192.47
->> port = 27017
+>> net:
+>>   bind_ip = 127.0.0.1,10.100.192.47
+>>   port = 27017
 >>
->> auth = true
+>> security:
+>>   authorization: enabled
 ```
 
 1) Starting mongod without any admin/password:
 ```
-mongod --port 27018 --dbpath ~/fireworks_data/db/
+mongod --port 27018 --dbpath mypath
 ```
 
 2) Connect to the database:
@@ -57,9 +72,11 @@ mongo  --port 27018
 3) Setup admin user and password in the mongo shell:
 ```
 use admin
-db.createUser({ user:"uname", pwd:"pswd", roles:[ {role:"root", db:"admin"},
-                                                            {role:"dbOwner", db:"admin"}
-                                                      ]})
+db.createUser({
+    user:"uname",
+    pwd:"pswd",
+    roles:[ {role:"root", db:"admin"}, {role:"dbOwner", db:"admin"}]
+    })
 #authsource : 'admin' in my_launchpad.yaml
 ```
 
@@ -68,6 +85,13 @@ db.createUser({ user:"uname", pwd:"pswd", roles:[ {role:"root", db:"admin"},
 use kubas
 mydict = { "name": "Marco", "age": "36" }
 db.test.insert(mydict)
+db.test.findOne()
+
+>> {
+>>    "_id" : ObjectId("64919e6aa09061a14012da20"),
+>>     "name" : "Marco",
+>>     "age" : "36"
+>> }
 ```
 
 5) stop db in 1) and 2)

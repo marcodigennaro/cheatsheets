@@ -1,13 +1,7 @@
 PYTEST cheatsheet
 =================
 
-conda install -c conda-forge pytest
-
-conda install -c conda-forge pytest-cov
-
-conda install -c conda-forge pytest-html
-
-conda install -c conda-forge pytest-mock
+conda install -c conda-forge pytest pytest-cov pytest-html pytest-mock
 
 Usage
 -----
@@ -23,4 +17,8 @@ test explicit error
 ```
 def test_to_fail() -> None:
     with pytest.raises(ValueError):
-``` 
+```
+
+Custom options
+--------------
+pytest --turbomole-integration
