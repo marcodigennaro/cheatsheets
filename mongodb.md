@@ -3,15 +3,15 @@ MONGODB cheatsheet
 ### check running processes
 ```
 ps -edaf | grep mongo
+
+#or #sudo lsof -i | grep mongo
+
+#or #sudo lsof -iTCP -sTCP:LISTEN -n -P | grep mongo
 ```
 
 ### kill previous instances
 
 ```
-sudo lsof -i | grep mongo
-sudo lsof -iTCP -sTCP:LISTEN -n -P | grep mongo
-ps -ef | grep mongo
-ls -l /proc/12054/exe
 sudo kill 12054
 ```
 
@@ -34,6 +34,13 @@ $: mongod --version
 >     target_arch: x86_64
 ```
 
+### make sure mongodb folder exists and is empty
+```
+rm -r /home/mdi0316/.mongodb/jfremote
+mkdir /home/mdi0316/.mongodb/jfremote
+mkdir /home/mdi0316/.mongodb/jfremote/db
+mkdir /home/mdi0316/.mongodb/jfremote/log
+```
 
 ON WORKSTATION
 --------------
@@ -61,7 +68,7 @@ ON WORKSTATION
 
 1) Starting mongod without any admin/password:
 ```
-mongod --port 27018 --dbpath mypath
+mongod --port 27018 --dbpath /home/mdi0316/.mongodb/jfremote/db
 ```
 
 2) Connect to the database:
@@ -73,19 +80,28 @@ mongo  --port 27018
 ```
 use admin
 db.createUser({
-    user:"uname",
-    pwd:"pswd",
-    roles:[ {role:"root", db:"admin"}, {role:"dbOwner", db:"admin"}]
+    user:"mdi0316",
+    pwd:"psw1",
+    roles:[ {role:"root", db:"admin"},
+            {role:"dbOwner", db:"admin"}]
     })
-#authsource : 'admin' in my_launchpad.yaml
+```
+
+```
+use admin
+db.grantRolesToUser(
+    "mdi0316",
+    [  { role: "dbOwner", db: "kubas" } ,
+       { role: "dbOwner", db: "pgel" } ]
+    )
 ```
 
 4) create kubas db and initiate with something
 ```
-use kubas
-mydict = { "name": "Marco", "age": "36" }
-db.test.insert(mydict)
-db.test.findOne()
+use exemple
+my_dict = { "name": "Marco", "age": "36" }
+db.ex_collection.insertOne(my_dict)
+db.ex_collection.findOne()
 
 >> {
 >>    "_id" : ObjectId("64919e6aa09061a14012da20"),
@@ -99,20 +115,14 @@ db.test.findOne()
 6) Starting mongod as a daemon (fork)
 
 ```
-mongod --port 27018 --dbpath ~/fireworks_data/db/ --logpath ~/fireworks_data/log/fireworks.log --fork --bind_ip_all --auth
+mongod --port 27018 --dbpath /home/mdi0316/.mongodb/jfremote/db --logpath /home/mdi0316/.mongodb/jfremote/log/jfr.log  --fork --bind_ip_all --auth
 ```
 
 7) Now, admin can connect using:
 
 ```
-mongo --port 27018 -u "usname" -p 'pswd' --authenticationDatabase "admin"
+mongo --port 27018 -u "mdi0316" -p "GEJR-shfb-6252-*():" --authenticationDatabase "admin"
 ```
-
-#7) In the same mongo shell
-#create user and password for the database:
-#use kubas
-#db.createUser( { user : 'uname', pwd : 'pswd', roles: [ {role:"dbOwner", db:"kubas"}, {role:"readWrite",db:"kubas"} ] } )
-#db.grantRolesToUser( 'uname' , ['readWrite'] )
 
 ON CLUSTER
 ----------
