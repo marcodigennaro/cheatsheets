@@ -66,14 +66,26 @@ ON WORKSTATION
 >>   authorization: enabled
 ```
 
+```
+user = "mdi0316"
+pwd = "dhxe-3736-{|[]-WHHF"
+port = 27019
+dbpath = /home/mdi0316/.mongodb/MnH/db
+dblog = /home/mdi0316/.mongodb/MnH/log/mnh.log
+```
+
 1) Starting mongod without any admin/password:
 ```
+<<<<<<< HEAD
+mongod --port $port --dbpath $dbpath
+=======
 mongod --port 27018 --dbpath /home/mdi0316/.mongodb/jfremote/db
+>>>>>>> d1ce282a9451848f81f75538ad78c4ade1a00693
 ```
 
 2) Connect to the database:
 ```
-mongo  --port 27018
+mongo --port $port
 ```
 
 3) Setup admin user and password in the mongo shell:
@@ -115,7 +127,11 @@ db.ex_collection.findOne()
 6) Starting mongod as a daemon (fork)
 
 ```
+<<<<<<< HEAD
+mongod --port $port --dbpath $dbpath --logpath $logpath --fork --bind_ip_all --auth
+=======
 mongod --port 27018 --dbpath /home/mdi0316/.mongodb/jfremote/db --logpath /home/mdi0316/.mongodb/jfremote/log/jfr.log  --fork --bind_ip_all --auth
+>>>>>>> d1ce282a9451848f81f75538ad78c4ade1a00693
 ```
 
 7) Now, admin can connect using:
