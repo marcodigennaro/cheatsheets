@@ -2,11 +2,11 @@ MONGODB cheatsheet
 ==================
 ### check running processes
 ```
-ps -edaf | grep mongo
+ps -edaf | grep mongosh
 
-#or #sudo lsof -i | grep mongo
+#or #sudo lsof -i | grep mongosh
 
-#or #sudo lsof -iTCP -sTCP:LISTEN -n -P | grep mongo
+#or #sudo lsof -iTCP -sTCP:LISTEN -n -P | grep mongosh
 ```
 
 ### kill previous instances
@@ -68,27 +68,23 @@ ON WORKSTATION
 
 ```
 user = "mdi0316"
-pwd = "dhxe-3736-{|[]-WHHF"
-port = 27019
-dbpath = /home/mdi0316/.mongodb/MnH/db
-dblog = /home/mdi0316/.mongodb/MnH/log/mnh.log
+pwd = "dhxe-3736-%+=!-WHHF"
+port = 27017
+dbpath = /home/mdi0316/.mongodb/kubas/db
+dblog = /home/mdi0316/.mongodb/kubas/log/mnh.log
 ```
 
 1) Starting mongod without any admin/password:
 ```
-<<<<<<< HEAD
 mongod --port $port --dbpath $dbpath
-=======
-mongod --port 27018 --dbpath /home/mdi0316/.mongodb/jfremote/db
->>>>>>> d1ce282a9451848f81f75538ad78c4ade1a00693
 ```
 
 2) Connect to the database:
 ```
-mongo --port $port
+mongosh --port $port
 ```
 
-3) Setup admin user and password in the mongo shell:
+3) Setup admin user and password in the mongosh shell:
 ```
 use admin
 db.createUser({
@@ -100,7 +96,6 @@ db.createUser({
 ```
 
 ```
-use admin
 db.grantRolesToUser(
     "mdi0316",
     [  { role: "dbOwner", db: "kubas" } ,
@@ -127,17 +122,13 @@ db.ex_collection.findOne()
 6) Starting mongod as a daemon (fork)
 
 ```
-<<<<<<< HEAD
 mongod --port $port --dbpath $dbpath --logpath $logpath --fork --bind_ip_all --auth
-=======
-mongod --port 27018 --dbpath /home/mdi0316/.mongodb/jfremote/db --logpath /home/mdi0316/.mongodb/jfremote/log/jfr.log  --fork --bind_ip_all --auth
->>>>>>> d1ce282a9451848f81f75538ad78c4ade1a00693
 ```
 
 7) Now, admin can connect using:
 
 ```
-mongo --port 27018 -u "mdi0316" -p "GEJR-shfb-6252-*():" --authenticationDatabase "admin"
+mongosh --port 27018 -u "mdi0316" -p "GEJR-shfb-6252-*():" --authenticationDatabase "admin"
 ```
 
 ON CLUSTER
@@ -146,7 +137,7 @@ ON CLUSTER
 8.0) Connect from another server (AT cluster) - default port
 
 ```
-$ mongo --port 27018 -u "uname" -p 'pswd' --authenticationDatabase "admin" --host 10.100.192.47
+$ mongosh --port 27018 -u "uname" -p 'pswd' --authenticationDatabase "admin" --host 10.100.192.47
 ```
 
 8.1) if not on opened port - activate tunnel on terminal 1
