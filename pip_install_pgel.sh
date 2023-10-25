@@ -11,3 +11,14 @@
 # conda install conda=23.9.0
 
 conda install -y -c conda-forge ase pymatgen nglview asap3 gpaw openmpi tblite tblite-python xtb-python jupyterlab
+
+pip install matgl
+
+ext_pck_dir='/home/mdi0316/WORK_TME022/external_packages/'
+
+for folder in ase; do
+    cd $ext_pck_dir/$folder
+    echo pip install $folder
+    git pull
+    pip install .
+    done
