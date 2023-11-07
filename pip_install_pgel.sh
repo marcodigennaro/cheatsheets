@@ -8,9 +8,20 @@
 # CREATE NEW CONDA ENVIRONMENT
 # conda create -n pgel python=3.10 -y
 # conda activate pgel
-# conda install conda=23.9.0
+# conda install conda=23.10.0
 
-conda install -y -c conda-forge ase pymatgen nglview asap3 gpaw openmpi tblite tblite-python xtb-python jupyterlab
+conda install -y -c conda-forge \
+    ase           /
+    pymatgen      /
+    nglview       /
+    asap3         /
+    gpaw          /
+    openmpi       /
+    tblite        /
+    tblite-python /
+    xtb-python    /
+    jupyterlab    /
+    ffmpeg
 
 pip install matgl
 
