@@ -21,7 +21,9 @@ conda install -y -c conda-forge \
     tblite-python /
     xtb-python    /
     jupyterlab    /
-    ffmpeg
+    ffmpeg        /
+    lammps
+
 
 pip install matgl
 
