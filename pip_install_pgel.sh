@@ -22,6 +22,8 @@ conda install -y -c conda-forge \
     xtb-python    /
     jupyterlab    /
     ffmpeg        /
+    mpi4py        /
+    pre_commit    /
     lammps
 
 
