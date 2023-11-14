@@ -24,14 +24,17 @@ conda install -y -c conda-forge \
     ffmpeg        /
     mpi4py        /
     pre_commit    /
-    lammps
+    lammps        /
+    fortran-compiler
 
 
 pip install matgl
 
 ext_pck_dir='/home/mdi0316/WORK_TME022/external_packages/'
+cd $ext_pck_dir
+git clone git@github.com:ehermes/ased3.git
 
-for folder in ase; do
+for folder in ase ased3; do
     cd $ext_pck_dir/$folder
     echo pip install $folder
     git pull
