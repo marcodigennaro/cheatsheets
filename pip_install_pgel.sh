@@ -22,18 +22,19 @@ conda install -y -c conda-forge \
     ffmpeg        \
     imageio       \
     statsmodels   \
+    asap3         \
+    gpaw          \
+    lammps        \
+    fortran-compiler \
     pipreqs pre_commit autopep8
-
-#    asap3         \
-#    gpaw          \
-#    lammps        \
-
 
 pip install matgl
 
 ext_pck_dir='/home/mdi0316/WORK_TME022/external_packages/'
+cd $ext_pck_dir
+git clone git@github.com:ehermes/ased3.git
 
-for folder in ase; do
+for folder in ase ased3; do
     cd $ext_pck_dir/$folder
     echo pip install $folder
     git pull
