@@ -11,18 +11,22 @@
 # conda install conda=23.10.0
 
 conda install -y -c conda-forge \
-    ase           /
-    pymatgen      /
-    nglview       /
-    asap3         /
-    gpaw          /
-    openmpi       /
-    tblite        /
-    tblite-python /
-    xtb-python    /
-    jupyterlab    /
-    ffmpeg        /
-    lammps
+    ase           \
+    pymatgen      \
+    nglview       \
+    openmpi       \
+    tblite        \
+    tblite-python \
+    xtb-python    \
+    jupyterlab    \
+    ffmpeg        \
+    imageio       \
+    statsmodels   \
+    pipreqs pre_commit autopep8
+
+#    asap3         \
+#    gpaw          \
+#    lammps        \
 
 
 pip install matgl
