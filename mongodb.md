@@ -24,14 +24,18 @@ $: which mongod
 
 $: mongod --version
 ```
-> db version v4.0.3
-> git version: 7ea530946fa7880364d88c8d8b6026bbc9ffa48c
-> OpenSSL version: OpenSSL 1.1.1q  5 Jul 2022
-> allocator: tcmalloc
-> modules: none
-> build environment:
->     distarch: x86_64
->     target_arch: x86_64
+> db version v6.0.2
+> Build Info: {
+>     "version": "6.0.2",
+>     "gitVersion": "94fb7dfc8b974f1f5343e7ea394d0d9deedba50e",
+>     "openSSLVersion": "OpenSSL 3.1.3 19 Sep 2023",
+>     "modules": [],
+>     "allocator": "tcmalloc",
+>     "environment": {
+>         "distarch": "x86_64",
+>         "target_arch": "x86_64"
+>     }
+> }
 ```
 
 ### make sure mongodb folder exists and is empty
@@ -44,6 +48,10 @@ mkdir /home/mdi0316/.mongodb/jfremote/log
 
 ON WORKSTATION
 --------------
+
+### Re-launch DB after shut down
+
+mongod --dbpath /home/mdi0316/.mongodb/kubas/db/ --logpath /home/mdi0316/.mongodb/kubas/log/kubas.log --fork --bind_ip_all --auth
 
 ### Starting and configuring the database
 
