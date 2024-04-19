@@ -5,6 +5,7 @@ poetry new poetry-demo
 
 ### Initialising a pre-existing project
 cd pre-existing-project
+
 poetry init
 
 ### Add Packages
