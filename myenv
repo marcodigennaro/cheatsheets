@@ -1,0 +1,9 @@
+mdg@macbook ->  python3 --version
+Python 3.12.7
+mdg@macbook ->  which python3
+/opt/homebrew/bin/python3
+mdg@macbook ->  python3 -m venv myenv
+mdg@macbook ->  ls myenv
+bin/        include/    lib/        pyvenv.cfg
+mdg@macbook Stefano Claes ->  source myenv/bin/activate
+(myenv) mdg@macbook ->
